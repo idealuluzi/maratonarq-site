@@ -1,0 +1,17 @@
+Retratos dos palestrantes.
+
+Nome do arquivo = o que estiver no campo `photo` do palestrante, em src/data.js.
+Hoje só a Ana Sapata tem foto prevista:
+
+    ana-sapata.jpg
+
+Enquanto o arquivo não estiver aqui, o card mostra a padronagem de fundo, como
+os demais — não quebra nem aparece ícone de imagem quebrada.
+
+Formato: o card recorta a foto num espaço de 280x210 (paisagem). Foto de retrato
+em pé funciona, mas é o campo `photoPosition` do palestrante que decide o
+enquadramento. Ele é um object-position do CSS: o primeiro valor corre na
+horizontal, o segundo na vertical. Em foto de corpo inteiro, baixar o segundo
+número sobe o rosto no recorte. A Ana está em '45% 30%'.
+
+Exporte em torno de 800px de largura para não pesar à toa.

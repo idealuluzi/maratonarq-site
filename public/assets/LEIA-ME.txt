@@ -1,0 +1,23 @@
+logo-horizontal.svg
+  Arquivo original da marca, guardado como referência. O site NÃO carrega este
+  arquivo: o mesmo desenho está embutido em src/components/Brand.jsx, o que
+  permite recolorir a versão clara do rodapé sem um segundo arquivo. Se trocar a
+  logo, troque nos dois lugares.
+
+simbolo-roxo.svg / simbolo-principal.svg
+  Símbolo isolado, em indigo sólido e na versão dourada de dois tons. Só
+  referência: o traçado é idêntico ao que já está embutido em Brand.jsx, então o
+  site usa o vetor de lá com as variantes de cor `indigo` e `brand`. O roxo é o
+  que aparece no hero; o principal é o que virou o favicon.
+
+padronagem-01-branco.svg
+  Padronagem como veio da marca, traço #f5f0e3. Serve para fundo escuro ou
+  dourado. Não usar sobre o papel bege: é a mesma cor, fica invisível.
+
+padronagem-01-indigo.svg
+  Mesma padronagem com o traço trocado para #230564, para uso sobre fundo claro.
+  É a que entra atrás do hero; a opacidade fica em Hero.jsx (S.pattern).
+
+Pendência: o PATTERN_BG de Brand.jsx ainda é um tile de arcos provisório que eu
+desenhei antes de a padronagem real chegar. Ele aparece nos cards de palestrante,
+na lateral do modal e no rodapé. Vale trocar pela versão branca acima.

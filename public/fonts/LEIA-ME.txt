@@ -1,0 +1,22 @@
+Fontes oficiais da marca, licenciadas pelo cliente.
+
+Fields Display  — Klim Type Foundry (principal, títulos)      pesos 400 a 900
+Futura PT       — Adobe             (secundária, textos e UI)  pesos 300 a 800
+
+As duas são COMERCIAIS. Não redistribuir fora deste projeto.
+
+Os .woff2 aqui foram convertidos dos .otf enviados pelo cliente. Atenção: os
+nomes dos arquivos .otf de origem estavam trocados em relação ao conteúdo (havia
+inclusive um Adobe Caslon Pro entre eles). O mapeamento foi feito pelos
+metadados internos de cada fonte — família, subfamília tipográfica e
+usWeightClass — e não pelo nome do arquivo. Os nomes daqui refletem o conteúdo
+real. Se receber arquivos novos, confira os metadados antes de sobrescrever.
+
+Declarações em src/styles/fonts.css. O navegador só baixa o arquivo de um
+@font-face quando algum texto pede aquele peso/estilo.
+
+Lacunas do material recebido:
+  - Fields Display não tem itálico (o itálico do hero sai inclinado pelo
+    navegador).
+  - Futura PT não tem Light Oblique nem Book Oblique, então itálico em peso
+    300/400 cai no Demi Oblique (500).

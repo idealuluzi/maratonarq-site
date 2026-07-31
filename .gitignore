@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.vite/
+*.local
+.DS_Store
+
+# Credenciais. .env.example é o modelo e pode ser versionado.
+.env
+.env.*
+!.env.example

@@ -1,0 +1,122 @@
+/* ============================================================
+   MaratonArq — reset, base e camada responsiva
+
+   Os componentes vieram do UI kit com estilos inline (desktop-only).
+   Estilo inline vence a cascata, então os ajustes de breakpoint aqui
+   precisam de !important. Cada regra é um override pontual — a
+   aparência-base continua morando no inline do componente.
+   ============================================================ */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; }
+::selection { background: var(--light-gold); color: var(--ink-on-gold); }
+#root { min-height: 100vh; }
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: var(--r-xs);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* ---------- Ajudantes ---------- */
+.maq-nav-link:hover { color: var(--ink) !important; }
+.maq-speaker-social:hover { color: var(--burnt-gold) !important; }
+
+/* Carrossel de palestrantes: a rolagem existe, a barra não aparece. */
+.maq-speakers-viewport { scrollbar-width: none; -ms-overflow-style: none; }
+.maq-speakers-viewport::-webkit-scrollbar { display: none; }
+.maq-footer-link { text-decoration: none; transition: color .2s; }
+.maq-footer-link:hover { color: var(--light-gold) !important; }
+
+/* Botão de menu mobile: só aparece abaixo de 900px */
+.maq-burger { display: none !important; }
+
+/* ============================================================
+   <= 1080px — grids largos começam a apertar
+   ============================================================ */
+@media (max-width: 1080px) {
+  .maq-stat { padding: 0 32px !important; }
+}
+
+/* ============================================================
+   <= 900px — layout de tablet / mobile
+   ============================================================ */
+@media (max-width: 900px) {
+  .maq-header { padding: 12px 20px !important; gap: 16px !important; }
+  .maq-nav { display: none !important; }
+  .maq-burger { display: flex !important; }
+  .maq-header-cta { display: none !important; }
+
+  .maq-hero {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    padding: 32px 20px 64px !important;
+  }
+  /* Fields Display é bem mais larga que a substituta com que o kit foi
+     desenhado: no piso de 40px do clamp original o título do hero quebrava
+     em quatro linhas no celular. Aqui ele volta a escalar com a viewport. */
+  .maq-hero-title { font-size: clamp(28px, 8.4vw, 52px) !important; }
+  .maq-section-title { font-size: 32px !important; }
+  .maq-hero-symbol { max-width: 320px; margin: 0 auto; }
+
+  .maq-section { padding: 56px 20px !important; }
+  .maq-speakers-section { padding: 56px 0 !important; }
+  .maq-section-head { padding: 0 20px !important; }
+  .maq-schedule { padding: 56px 0 !important; }
+  .maq-schedule-inner { padding: 0 20px !important; }
+
+  .maq-tiers-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .maq-tier-card { transform: none !important; }
+
+  .maq-modal-aside { display: none !important; }
+  .maq-modal-main { padding: 32px 24px !important; }
+
+  .maq-footer-inner { padding: 48px 20px 32px !important; }
+  .maq-footer-links { gap: 40px !important; }
+}
+
+/* ============================================================
+   <= 760px — as duas trilhas do sábado deixam de caber lado a lado
+   ============================================================ */
+@media (max-width: 760px) {
+  .maq-track-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+
+/* ============================================================
+   <= 620px — celular
+   ============================================================ */
+@media (max-width: 620px) {
+  .maq-stats { padding: 28px 12px !important; gap: 8px 0 !important; }
+  /* "+R$1600" é o número mais largo da faixa e não cabe a 40px em meia
+     coluna de celular — daí o corpo menor e o respiro lateral reduzido. */
+  .maq-stat { padding: 12px 14px !important; border-right: none !important; width: 50%; }
+  .maq-stat-n { font-size: 32px !important; }
+
+  .maq-hero-actions { flex-direction: column !important; align-items: stretch !important; }
+  .maq-hero-actions > * { text-align: center; }
+
+  .maq-tabs { flex-wrap: wrap !important; }
+  .maq-sch-row { flex-wrap: wrap !important; gap: 12px !important; }
+  .maq-sch-bar { display: none !important; }
+
+  .maq-footer-links { flex-direction: column !important; gap: 28px !important; }
+}

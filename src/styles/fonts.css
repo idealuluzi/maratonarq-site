@@ -1,0 +1,155 @@
+/* ============================================================
+   Tipografia da marca — Fields Display + Futura PT
+
+   Arquivos licenciados pelo cliente, convertidos de .otf para .woff2
+   e servidos de public/fonts/. As duas famílias são comerciais
+   (Fields Display: Klim Type Foundry; Futura PT: Adobe) — não
+   redistribuir fora deste projeto.
+
+   Os arquivos .otf de origem tinham nomes trocados em relação ao
+   conteúdo (havia até um Adobe Caslon Pro entre eles). O mapeamento
+   abaixo segue os metadados internos de cada fonte, não o nome do
+   arquivo original. Os pesos são os declarados em usWeightClass.
+
+   Nem todo bloco gera download: o navegador só busca o arquivo de um
+   @font-face quando algum texto realmente pede aquele peso/estilo.
+   Hoje o site usa Fields Display 600 e Futura PT 300/400/500/600.
+
+   Faltam nos arquivos recebidos:
+   - Fields Display não tem itálico. O itálico do hero ("maratona")
+     é inclinado pelo navegador.
+   - Futura PT não tem Light Oblique nem Book Oblique, então itálico
+     em peso 300/400 cai no Demi Oblique (500).
+   ============================================================ */
+
+/* ---------- Fields Display (principal, títulos) ---------- */
+
+@font-face {
+  font-family: 'Fields Display';
+  src: url('/fonts/FieldsDisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fields Display';
+  src: url('/fonts/FieldsDisplay-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fields Display';
+  src: url('/fonts/FieldsDisplay-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fields Display';
+  src: url('/fonts/FieldsDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fields Display';
+  src: url('/fonts/FieldsDisplay-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fields Display';
+  src: url('/fonts/FieldsDisplay-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Futura PT (secundária, textos e interface) ---------- */
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaPT-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaPT-Book.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaPT-Demi.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaPT-DemiOblique.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaPT-Heavy.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaPT-HeavyOblique.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaPT-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaPT-BoldOblique.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaPT-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaPT-ExtraBoldOblique.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}

@@ -1,0 +1,159 @@
+/* ============================================================
+   MaratonArq — Design Foundations
+   Colors + Typography tokens
+   Source: "MaratonArq — Manual de Identidade Visual da Marca" (2025)
+   Manual da marca feito pela EJ Inventório (Design e Moda).
+   O evento é organizado pela iDealizejr (Arquitetura e Urbanismo) — é ela
+   que assina o rodapé do site.
+
+   Vindo do projeto de design (colors_and_type.css). A única alteração
+   em relação ao original é a ordem das pilhas de fonte — ver abaixo.
+   As fontes substitutas são carregadas via <link> no index.html.
+   ============================================================ */
+
+:root {
+  /* ===== BRAND PALETTE — primary ===== */
+  --burnt-gold:  #A28231; /* Amarelo Queimado — core brand mark */
+  --light-gold:  #E0CF75; /* Amarelo Claro    — highlight / accent */
+  --beige:       #F5F0E3; /* Bege             — paper / surface */
+
+  /* ===== BRAND PALETTE — secondary ===== */
+  --indigo:      #230564; /* Roxo Índigo — deep brand ink / dark bg */
+  --sober-blue:  #2A597D; /* Azul Sóbrio — calm secondary accent */
+
+  /* ===== DERIVED NEUTRALS (tuned to the beige paper) ===== */
+  --paper:        #F5F0E3; /* base surface */
+  --paper-raised: #FBF8F0; /* cards on paper */
+  --paper-sunken: #EDE6D4; /* wells, inset fields */
+  --line:         #E0D7C0; /* hairline borders on paper */
+  --line-strong:  #CBBE9C; /* stronger dividers */
+
+  --ink:          #1A0A3D; /* primary text (indigo, darkened) */
+  --ink-2:        #463568; /* secondary text */
+  --ink-3:        #7C6E97; /* tertiary / captions */
+  --ink-on-gold:  #2E2410; /* text over gold fills */
+
+  /* ===== GOLD SCALE (from burnt → light) ===== */
+  --gold-900: #6E5720;
+  --gold-700: #876B27;
+  --gold-600: #A28231; /* = burnt-gold */
+  --gold-400: #C4A84E;
+  --gold-300: #E0CF75; /* = light-gold */
+  --gold-100: #F0E6BE;
+
+  /* ===== INDIGO SCALE ===== */
+  --indigo-900: #15033C;
+  --indigo-700: #230564; /* = indigo */
+  --indigo-500: #3A1E7A;
+  --indigo-300: #6A53A6;
+
+  /* ===== SEMANTIC ROLES ===== */
+  --bg:            var(--paper);
+  --bg-dark:       var(--indigo-700);
+  --surface:       var(--paper-raised);
+  --accent:        var(--burnt-gold);
+  --accent-soft:   var(--light-gold);
+  --link:          var(--sober-blue);
+  --focus-ring:    var(--burnt-gold);
+
+  /* status (kept within brand temperature) */
+  --success: #4F7A3F;
+  --warning: #B7791F;
+  --danger:  #9B3B2E;
+
+  /* ===== TYPE FAMILIES ===== */
+  /* Tipografia da marca primeiro; as substitutas só entram como reserva.
+     Fields Display (Klim) e Futura PT (Adobe) são comerciais e não estão no
+     repositório: quem tiver as fontes instaladas já vê o site correto, o resto
+     cai em Cormorant Garamond / Jost. Para valer para todo visitante, coloque
+     os arquivos licenciados em public/fonts/ e ative os @font-face de
+     src/styles/fonts.css. */
+  --font-display: 'Fields Display', 'Fields', 'Cormorant Garamond', Georgia, serif;
+  --font-sans:    'Futura PT', 'Futura Std', 'Futura', 'Jost', system-ui, sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* ===== TYPE SCALE (1.250 major-third, 16px base) ===== */
+  --text-xs:   0.75rem;  /* 12 */
+  --text-sm:   0.875rem; /* 14 */
+  --text-base: 1rem;     /* 16 */
+  --text-lg:   1.25rem;  /* 20 */
+  --text-xl:   1.563rem; /* 25 */
+  --text-2xl:  1.953rem; /* 31 */
+  --text-3xl:  2.441rem; /* 39 */
+  --text-4xl:  3.052rem; /* 49 */
+  --text-5xl:  3.815rem; /* 61 */
+
+  /* ===== WEIGHTS ===== */
+  --w-light: 300;
+  --w-regular: 400;
+  --w-medium: 500;
+  --w-semibold: 600;
+  --w-bold: 700;
+
+  /* ===== RADII ===== */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* ===== SPACING (4px base) ===== */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+  --sp-9: 96px;
+
+  /* ===== SHADOWS (warm, low-spread — paper feel) ===== */
+  --shadow-sm: 0 1px 2px rgba(46,36,16,.08);
+  --shadow-md: 0 6px 18px rgba(46,36,16,.10);
+  --shadow-lg: 0 18px 48px rgba(35,5,100,.14);
+  --shadow-gold: 0 8px 28px rgba(162,130,49,.28);
+
+  /* ===== MOTION ===== */
+  --ease-out: cubic-bezier(.22,.61,.36,1);
+  --ease-in-out: cubic-bezier(.65,.05,.36,1);
+  --dur-fast: 140ms;
+  --dur: 240ms;
+  --dur-slow: 420ms;
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT STYLES
+   Apply via classes or scope to a wrapper.
+   ============================================================ */
+.maq-display {
+  font-family: var(--font-display);
+  font-weight: var(--w-semibold);
+  letter-spacing: .01em;
+  line-height: 1.04;
+  color: var(--ink);
+}
+
+.maq-h1 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-5xl); line-height: 1.02; letter-spacing: .005em; color: var(--ink); }
+.maq-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-4xl); line-height: 1.06; color: var(--ink); }
+.maq-h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-3xl); line-height: 1.1;  color: var(--ink); }
+.maq-h4 { font-family: var(--font-sans);    font-weight: 600; font-size: var(--text-xl);  line-height: 1.2;  letter-spacing: .01em; color: var(--ink); }
+
+/* Eyebrow / kicker — Futura-style wide tracking caps */
+.maq-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: var(--accent);
+}
+
+.maq-lead { font-family: var(--font-sans); font-weight: 300; font-size: var(--text-lg); line-height: 1.55; color: var(--ink-2); }
+.maq-body { font-family: var(--font-sans); font-weight: 400; font-size: var(--text-base); line-height: 1.65; color: var(--ink-2); }
+.maq-small{ font-family: var(--font-sans); font-weight: 400; font-size: var(--text-sm); line-height: 1.5; color: var(--ink-3); }
+.maq-mono { font-family: var(--font-mono); font-size: var(--text-sm); letter-spacing: .01em; }
+
+/* Wordmark lockup helper — matches logo's serif caps */
+.maq-wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--burnt-gold);
+}
