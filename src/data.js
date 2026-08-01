@@ -57,7 +57,7 @@ export const DATA = {
       instagram: '@ark7arquitetos',
       tag: 'Palestra',
       photo: '/assets/palestrantes/bonetti-rotolo.jpg',
-      photoPosition: '50% 20%',
+      photoPosition: '50% 30%',
     },
     { revealed: false, name: 'Nome a anunciar', role: 'Convidado do MaratonArq', topic: 'Tema a anunciar' },
     { revealed: false, name: 'Nome a anunciar', role: 'Convidado do MaratonArq', topic: 'Tema a anunciar' },
