@@ -6,13 +6,13 @@ import { DATA } from '../data.js';
    apoia" do que com um grid de cartões. */
 export default function Sponsors() {
   return (
-    <section id="patrocinadores" className="maq-section" style={S.wrap}>
-      <div style={S.head}>
+    <section id="patrocinadores" className="maq-sponsors" style={S.wrap}>
+      <div className="maq-sponsors-inner" style={S.head}>
         <div style={S.eyebrow}>Quem apoia</div>
         <h2 className="maq-section-title" style={S.title}>Patrocinadores &amp; apoiadores</h2>
       </div>
 
-      <div style={S.tiers}>
+      <div className="maq-sponsors-inner" style={S.tiers}>
         {DATA.sponsorTiers.map((tier) => (
           <div key={tier.key} className="maq-sponsor-tier" style={S.tierRow}>
             <span
@@ -40,8 +40,11 @@ export default function Sponsors() {
 }
 
 const S = {
-  wrap: { maxWidth: 1240, margin: '0 auto', padding: '48px 40px 88px' },
-  head: { marginBottom: 40 },
+  // Tom diferente do resto da página — mesmo token usado na Programação —
+  // para a seção se destacar. Só o fundo sangra: o conteúdo continua
+  // centrado nos mesmos 1240px das outras seções (ver .maq-sponsors-inner).
+  wrap: { background: 'var(--paper-sunken)', padding: '48px 0 88px' },
+  head: { maxWidth: 1240, margin: '0 auto 40px', padding: '0 40px' },
   eyebrow: {
     fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 13, letterSpacing: '.22em',
     textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 4,
@@ -50,7 +53,10 @@ const S = {
     fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 42, lineHeight: 1.05,
     color: 'var(--ink)', margin: 0,
   },
-  tiers: { display: 'flex', flexDirection: 'column', gap: 28 },
+  tiers: {
+    maxWidth: 1240, margin: '0 auto', padding: '0 40px',
+    display: 'flex', flexDirection: 'column', gap: 28,
+  },
   tierRow: { display: 'flex', alignItems: 'center', gap: 28, flexWrap: 'wrap' },
   badge: {
     flex: 'none', fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 12,
