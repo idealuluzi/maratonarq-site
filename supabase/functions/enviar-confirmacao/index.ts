@@ -42,9 +42,9 @@ function corpoHtml(inscricao: Record<string, unknown>) {
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
              style="max-width:520px;background:#FBF8F0;border:1px solid #E0D7C0;border-radius:18px;overflow:hidden">
         <tr>
-          <td style="background:#F5F0E3;padding:28px 32px;text-align:center">
+          <td style="background:#F5F0E3;padding:18px 32px;text-align:left">
             <img src="https://www.maratonarq.com.br/assets/logo-email.png" alt="MaratonArq"
-                 width="220" style="display:block;width:220px;height:auto;margin:0 auto" />
+                 width="160" style="display:block;width:160px;height:auto" />
           </td>
         </tr>
         <tr>
