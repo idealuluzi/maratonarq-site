@@ -47,19 +47,34 @@ function corpoHtml(inscricao: Record<string, unknown>) {
     : '';
 
   return `<!doctype html>
-<html lang="pt-BR"><body style="margin:0;padding:0;background:#F5F0E3">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F5F0E3;padding:32px 16px">
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<!-- Sem isso, o app do Gmail no celular "inverte" as cores do e-mail no modo
+     escuro do telefone — é o que deixava o indigo virando rosa e o bege
+     virando marrom escuro. Isso avisa que o e-mail já tem paleta própria. -->
+<style>
+  :root { color-scheme: light; supported-color-schemes: light; }
+  body, table, td { color-scheme: light !important; }
+  [data-ogsc] body, [data-ogsc] table, [data-ogsc] td { background-color: inherit !important; color: inherit !important; }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#F5F0E3">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#F5F0E3" style="background:#F5F0E3;padding:32px 16px">
     <tr><td align="center">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#FBF8F0"
              style="max-width:520px;background:#FBF8F0;border:1px solid #E0D7C0;border-radius:18px;overflow:hidden">
         <tr>
-          <td style="background:#230564;padding:18px 32px;text-align:left">
+          <td bgcolor="#230564" style="background:#230564;padding:18px 32px;text-align:left">
             <img src="https://www.maratonarq.com.br/assets/logo-email.png" alt="MaratonArq"
                  width="160" style="display:block;width:160px;height:auto" />
           </td>
         </tr>
         <tr>
-          <td style="padding:32px">
+          <td bgcolor="#FBF8F0" style="padding:32px;background:#FBF8F0">
             <h1 style="margin:0 0 12px;font-family:Georgia,serif;font-size:26px;color:#1A0A3D">
               Inscrição confirmada!
             </h1>
@@ -68,7 +83,7 @@ function corpoHtml(inscricao: Record<string, unknown>) {
               Guarde as datas — a gente se vê lá.
             </p>
 
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#EDE6D4"
                    style="background:#EDE6D4;border-radius:8px;padding:16px 18px;font-family:Helvetica,Arial,sans-serif">
               <tr>
                 <td style="padding:6px 0;color:#7C6E97;font-size:14px">Quando</td>
@@ -104,7 +119,7 @@ function corpoHtml(inscricao: Record<string, unknown>) {
           </td>
         </tr>
         <tr>
-          <td style="background:#15033C;padding:18px 32px;font-family:Helvetica,Arial,sans-serif;font-size:12px;color:rgba(245,240,227,.6)">
+          <td bgcolor="#15033C" style="background:#15033C;padding:18px 32px;font-family:Helvetica,Arial,sans-serif;font-size:12px;color:rgba(245,240,227,.6)">
             MaratonArq · iDealizejr — Empresa Júnior de Arquitetura e Urbanismo
           </td>
         </tr>
