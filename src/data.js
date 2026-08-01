@@ -168,11 +168,14 @@ export const DATA = {
     {
       key: 'prata', label: 'Cota Prata', tone: '#9AA5B1',
       companies: [
-        // `size`: altura em px da logo. As marcas em wordmark (texto largo)
-        // leem bem a 44px, mas as em símbolo/quadrado (Donata, Redraw) ficam
-        // minúsculas na mesma altura — precisam de mais para pesar igual.
-        { name: 'Donata Brazilian Stones', logo: '/assets/patrocinadores/donata.png', size: 72 },
-        { name: 'Redraw', logo: '/assets/patrocinadores/redraw.png', size: 72 },
+        { name: 'Donata Brazilian Stones', logo: '/assets/patrocinadores/donata.png' },
+        // Ícone + nome bem largos (proporção ~7:1) — na altura padrão de
+        // 44px ela pediria uns 320px de largura, dominando a fileira.
+        // `maxWidth` segura isso; a imagem encolhe um pouco de altura para
+        // caber, e como a fileira centraliza (alignItems: center), ela fica
+        // ligeiramente mais baixa que as vizinhas, mas com peso visual
+        // comparável.
+        { name: 'Redraw', logo: '/assets/patrocinadores/redraw.png', maxWidth: 220 },
         { name: 'Metalco', logo: '/assets/patrocinadores/metalco.png' },
       ],
     },

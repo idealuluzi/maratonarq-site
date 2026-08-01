@@ -31,6 +31,7 @@ export default function Sponsors() {
                   style={{
                     ...S.logo,
                     height: s.size ?? S.logo.height,
+                    maxWidth: s.maxWidth ?? S.logo.maxWidth,
                     borderLeft: i > 0 ? '1px solid var(--line-strong)' : 'none',
                   }}
                 />
