@@ -255,7 +255,7 @@ const S = {
   /* speakers */
   // A faixa de cards sangra de ponta a ponta da página; só o título fica
   // no contêiner de 1240, alinhado com as outras seções.
-  wrap: { padding: '88px 0' },
+  wrap: { padding: '48px 0 88px' },
   head: { maxWidth: 1240, margin: '0 auto 40px', padding: '0 40px' },
   eyebrow: {
     fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 13, letterSpacing: '.22em',

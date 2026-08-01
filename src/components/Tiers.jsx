@@ -109,7 +109,7 @@ function FCol({ title, items }) {
 }
 
 const S = {
-  wrap: { maxWidth: 1240, margin: '0 auto', padding: '88px 40px' },
+  wrap: { maxWidth: 1240, margin: '0 auto', padding: '48px 40px 88px' },
   head: { textAlign: 'center', marginBottom: 44, maxWidth: 560, marginInline: 'auto' },
   eyebrow: {
     fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 13, letterSpacing: '.22em',

@@ -75,10 +75,10 @@ a { color: inherit; }
   .maq-section-title { font-size: 32px !important; }
   .maq-hero-symbol { max-width: 320px; margin: 0 auto; }
 
-  .maq-section { padding: 56px 20px !important; }
-  .maq-speakers-section { padding: 56px 0 !important; }
+  .maq-section { padding: 32px 20px 56px !important; }
+  .maq-speakers-section { padding: 32px 0 56px !important; }
   .maq-section-head { padding: 0 20px !important; }
-  .maq-schedule { padding: 56px 0 !important; }
+  .maq-schedule { padding: 32px 0 56px !important; }
   .maq-schedule-inner { padding: 0 20px !important; }
 
   .maq-tiers-grid { grid-template-columns: 1fr !important; gap: 28px !important; }

@@ -86,7 +86,7 @@ function Row({ row }) {
 }
 
 const S = {
-  wrap: { background: 'var(--paper-sunken)', padding: '88px 0' },
+  wrap: { background: 'var(--paper-sunken)', padding: '48px 0 88px' },
   head: { maxWidth: 880, margin: '0 auto 32px', padding: '0 40px' },
   eyebrow: {
     fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 13, letterSpacing: '.22em',
