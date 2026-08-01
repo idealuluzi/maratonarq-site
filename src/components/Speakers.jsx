@@ -311,6 +311,10 @@ const S = {
   social: {
     display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 12,
     fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--ink-3)',
-    textDecoration: 'none', transition: 'color .2s',
+    textDecoration: 'none', transition: 'color .2s', cursor: 'pointer',
+    // O carrossel é arrastável (mouse) e rolável (toque); isso garante que o
+    // link em si sempre responda ao toque/clique como um link normal, mesmo
+    // por cima do contêiner que captura ponteiro para o arrasto.
+    position: 'relative', zIndex: 1, touchAction: 'manipulation',
   },
 };
