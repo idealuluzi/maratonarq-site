@@ -168,8 +168,11 @@ export const DATA = {
     {
       key: 'prata', label: 'Cota Prata', tone: '#9AA5B1',
       companies: [
-        { name: 'Donata Brazilian Stones', logo: '/assets/patrocinadores/donata.png' },
-        { name: 'Redraw', logo: '/assets/patrocinadores/redraw.png' },
+        // `size`: altura em px da logo. As marcas em wordmark (texto largo)
+        // leem bem a 44px, mas as em símbolo/quadrado (Donata, Redraw) ficam
+        // minúsculas na mesma altura — precisam de mais para pesar igual.
+        { name: 'Donata Brazilian Stones', logo: '/assets/patrocinadores/donata.png', size: 72 },
+        { name: 'Redraw', logo: '/assets/patrocinadores/redraw.png', size: 72 },
         { name: 'Metalco', logo: '/assets/patrocinadores/metalco.png' },
       ],
     },

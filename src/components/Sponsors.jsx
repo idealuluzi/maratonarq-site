@@ -28,7 +28,11 @@ export default function Sponsors() {
                   src={s.logo}
                   alt={s.name}
                   className="maq-sponsor-logo"
-                  style={{ ...S.logo, borderLeft: i > 0 ? '1px solid var(--line-strong)' : 'none' }}
+                  style={{
+                    ...S.logo,
+                    height: s.size ?? S.logo.height,
+                    borderLeft: i > 0 ? '1px solid var(--line-strong)' : 'none',
+                  }}
                 />
               ))}
             </div>
