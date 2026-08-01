@@ -124,6 +124,6 @@ a { color: inherit; }
 
   /* Etiqueta da cota empilhada acima das logos: lado a lado, a fileira de
      logos quebra linha internamente e desalinha a etiqueta verticalmente. */
-  .maq-sponsor-tier { padding: 44px 20px 24px !important; }
+  .maq-sponsor-tiers { gap: 28px !important; }
   .maq-sponsor-row { gap: 24px 28px !important; }
 }

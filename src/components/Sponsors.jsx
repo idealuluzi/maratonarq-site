@@ -1,10 +1,9 @@
 import { DATA } from '../data.js';
 
-/* Cada cota vira uma "zona" com leve tingimento da cor da cota (prata/bronze)
-   e cantos arredondados — a etiqueta é só texto simples no canto superior
-   esquerdo, sem pílula. As logos dentro se alternam de altura (staggered),
-   em vez de ficarem todas alinhadas numa linha reta — dá o efeito de
-   composição solta em vez de grid rígido. */
+/* Sem cartão nem fundo tingido: cada cota é só uma coluna, lado a lado com
+   a outra, com a etiqueta (texto simples, sem pílula) no canto superior
+   esquerdo. As logos dentro se alternam de altura (staggered) em vez de
+   ficarem todas alinhadas numa linha reta. */
 export default function Sponsors() {
   return (
     <section id="patrocinadores" className="maq-sponsors" style={S.wrap}>
@@ -13,13 +12,9 @@ export default function Sponsors() {
         <h2 className="maq-section-title" style={S.title}>Patrocinadores &amp; apoiadores</h2>
       </div>
 
-      <div className="maq-sponsors-inner" style={S.tiers}>
+      <div className="maq-sponsors-inner maq-sponsor-tiers" style={S.tiers}>
         {DATA.sponsorTiers.map((tier) => (
-          <div
-            key={tier.key}
-            className="maq-sponsor-tier"
-            style={{ ...S.tierBox, background: `${tier.tone}1a` }}
-          >
+          <div key={tier.key} className="maq-sponsor-tier" style={S.tierCol}>
             <span style={{ ...S.label, color: tier.tone }}>{tier.label}</span>
             <div className="maq-sponsor-row" style={S.logos}>
               {tier.companies.map((s, i) => (
@@ -61,17 +56,16 @@ const S = {
     fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 42, lineHeight: 1.05,
     color: 'var(--ink)', margin: 0,
   },
+  // Cotas lado a lado, não empilhadas.
   tiers: {
     maxWidth: 1240, margin: '0 auto', padding: '0 40px',
-    display: 'flex', flexDirection: 'column', gap: 20,
+    display: 'flex', flexWrap: 'wrap', gap: '32px 64px',
   },
-  tierBox: {
-    position: 'relative', borderRadius: 'var(--r-lg)', padding: '46px 32px 32px',
-  },
+  tierCol: { flex: '1 1 260px', display: 'flex', flexDirection: 'column', gap: 16 },
   label: {
-    position: 'absolute', top: 18, left: 24, fontFamily: 'var(--font-sans)', fontWeight: 700,
-    fontSize: 12, letterSpacing: '.14em', textTransform: 'uppercase',
+    fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 12,
+    letterSpacing: '.14em', textTransform: 'uppercase',
   },
-  logos: { display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap', gap: 36, minHeight: 64 },
+  logos: { display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap', gap: 28, minHeight: 64 },
   logo: { width: 'auto', maxWidth: 180, objectFit: 'contain', height: 44 },
 };
