@@ -71,7 +71,7 @@ export const DATA = {
       short: 'Sex · 11',
       label: 'Sexta-feira, 11 de setembro',
       items: [
-        { t: '14h', title: 'Giovani Bonetti + Leandro Rotolo', kind: 'palestra', revealed: false },
+        { t: '14h', title: 'Giovani Bonetti + Leandro Rotolo', kind: 'palestra' },
         { t: '15h30', title: 'Coffee break + conversa', kind: 'evento' },
         { t: '16h', title: 'Glória Cabral', kind: 'palestra', revealed: false },
       ],
