@@ -29,8 +29,16 @@ const EVENTO = {
 // Mesmo perfil do rodapé do site (src/data.js: contact.instagram).
 const INSTAGRAM_URL = 'https://www.instagram.com/maratonarq.oficial';
 
+// Estudante participa dos três dias; arquiteto/profissional só do dia 12.
+// Mesma regra de src/data.js: DATA.datesPorPerfil.
+const DATAS_POR_PERFIL: Record<string, string> = {
+  Estudante: '11 a 13 de setembro',
+  Arquiteto: '12 de setembro',
+};
+
 function corpoHtml(inscricao: Record<string, unknown>) {
   const nome = String(inscricao.nome ?? '').trim().split(' ')[0] || 'tudo bem';
+  const datasDoPerfil = DATAS_POR_PERFIL[String(inscricao.perfil ?? '')] ?? EVENTO.datas;
   const modalidade = inscricao.modalidade
     ? `<tr>
          <td style="padding:6px 0;color:#7C6E97;font-size:14px">Modalidade</td>
@@ -64,7 +72,7 @@ function corpoHtml(inscricao: Record<string, unknown>) {
                    style="background:#EDE6D4;border-radius:8px;padding:16px 18px;font-family:Helvetica,Arial,sans-serif">
               <tr>
                 <td style="padding:6px 0;color:#7C6E97;font-size:14px">Quando</td>
-                <td style="padding:6px 0;color:#1A0A3D;font-size:14px;text-align:right">${EVENTO.datas}</td>
+                <td style="padding:6px 0;color:#1A0A3D;font-size:14px;text-align:right">${datasDoPerfil}</td>
               </tr>
               <tr>
                 <td style="padding:6px 0;color:#7C6E97;font-size:14px">Onde</td>
@@ -75,20 +83,20 @@ function corpoHtml(inscricao: Record<string, unknown>) {
 
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:26px">
               <tr>
-                <td width="90" valign="middle" style="padding-right:16px">
+                <td width="120" valign="middle" style="padding-right:16px">
                   <a href="${INSTAGRAM_URL}">
                     <img src="https://www.maratonarq.com.br/assets/instagram-qr.png" alt="QR do Instagram do MaratonArq"
-                         width="90" style="display:block;width:90px;height:90px;border-radius:8px" />
+                         width="120" style="display:block;width:120px;height:120px;border-radius:8px" />
                   </a>
                 </td>
                 <td valign="middle" style="font-family:Helvetica,Arial,sans-serif">
                   <p style="margin:0 0 6px;font-size:14px;font-weight:bold;color:#1A0A3D">
-                    Siga a gente no Instagram
+                    Nos siga no Instagram
                   </p>
                   <p style="margin:0;font-size:13px;line-height:1.5;color:#7C6E97">
-                    Aponte a câmera para o QR ou
+                    Aponte a câmera para o qr code ou
                     <a href="${INSTAGRAM_URL}" style="color:#9d833f;font-weight:bold;text-decoration:none">clique aqui</a>
-                    para acompanhar os bastidores do evento.
+                    para acompanhar as novidades e informações do evento.
                   </p>
                 </td>
               </tr>

@@ -302,7 +302,7 @@ function Sucesso({ form, perfil, onClose }) {
       </p>
       <div style={M.summary}>
         <span>{form.modalidade || perfil}</span>
-        <span style={{ color: 'var(--ink-3)' }}>{DATA.dates}</span>
+        <span style={{ color: 'var(--ink-3)' }}>{DATA.datesPorPerfil[perfil] ?? DATA.dates}</span>
       </div>
       <button style={M.submit} onClick={onClose}>Concluir</button>
     </div>

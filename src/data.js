@@ -3,6 +3,12 @@
 export const DATA = {
   edition: '2026',
   dates: '11 – 13 SET',
+  // Estudante participa dos três dias; arquiteto/profissional só do dia 12.
+  // Usado na tela de sucesso do modal e no e-mail de confirmação.
+  datesPorPerfil: {
+    Estudante: '11 – 13 SET',
+    Arquiteto: '12 SET',
+  },
   city: 'UDESC - Laguna',
   ticketNote: 'Inscrições gratuitas',
   lead:
