@@ -166,15 +166,15 @@ export const DATA = {
   // uma cota nova, se for o caso).
   sponsorTiers: [
     {
-      key: 'prata', label: 'Cota Prata',
+      key: 'prata', label: 'Cota Prata', tone: '#9AA5B1',
       companies: [
         { name: 'Donata Brazilian Stones', logo: '/assets/patrocinadores/donata.png' },
         { name: 'Redraw', logo: '/assets/patrocinadores/redraw.png' },
-        { name: 'Metalco', logo: '/assets/patrocinadores/metalco.jpg' },
+        { name: 'Metalco', logo: '/assets/patrocinadores/metalco.png' },
       ],
     },
     {
-      key: 'bronze', label: 'Cota Bronze',
+      key: 'bronze', label: 'Cota Bronze', tone: '#B87333',
       companies: [
         { name: 'Globo Portas', logo: '/assets/patrocinadores/globo-portas.png' },
       ],

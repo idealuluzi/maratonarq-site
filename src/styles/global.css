@@ -119,4 +119,10 @@ a { color: inherit; }
   .maq-sch-bar { display: none !important; }
 
   .maq-footer-links { flex-direction: column !important; gap: 28px !important; }
+
+  /* Etiqueta da cota empilhada acima das logos: lado a lado, a fileira de
+     logos quebra linha internamente e desalinha a etiqueta verticalmente. */
+  .maq-sponsor-tier { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; }
+  .maq-sponsor-row { justify-content: flex-start !important; gap: 4px 0 !important; }
+  .maq-sponsor-logo { padding: 0 16px 0 0 !important; border-left: none !important; }
 }
