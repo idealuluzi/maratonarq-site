@@ -26,6 +26,10 @@ const EVENTO = {
   local: 'UDESC — Laguna',
 };
 
+// Handle decodificado do QR oficial (maratonarq.oficial_qr.png) — confirmar se
+// bate com o @maratonarq usado no rodapé do site (src/data.js: contact.instagram).
+const INSTAGRAM_URL = 'https://www.instagram.com/maratonarq.oficial';
+
 function corpoHtml(inscricao: Record<string, unknown>) {
   const nome = String(inscricao.nome ?? '').trim().split(' ')[0] || 'tudo bem';
   const modalidade = inscricao.modalidade
@@ -70,9 +74,26 @@ function corpoHtml(inscricao: Record<string, unknown>) {
               ${modalidade}
             </table>
 
-            <p style="margin:22px 0 0;font-family:Helvetica,Arial,sans-serif;font-size:13px;line-height:1.6;color:#7C6E97">
-              Recebeu este e-mail sem ter se inscrito? Pode ignorar, nenhuma vaga foi reservada em seu nome.
-            </p>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:26px">
+              <tr>
+                <td width="90" valign="middle" style="padding-right:16px">
+                  <a href="${INSTAGRAM_URL}">
+                    <img src="https://www.maratonarq.com.br/assets/instagram-qr.png" alt="QR do Instagram do MaratonArq"
+                         width="90" style="display:block;width:90px;height:90px;border-radius:8px" />
+                  </a>
+                </td>
+                <td valign="middle" style="font-family:Helvetica,Arial,sans-serif">
+                  <p style="margin:0 0 6px;font-size:14px;font-weight:bold;color:#1A0A3D">
+                    Siga a gente no Instagram
+                  </p>
+                  <p style="margin:0;font-size:13px;line-height:1.5;color:#7C6E97">
+                    Aponte a câmera para o QR ou
+                    <a href="${INSTAGRAM_URL}" style="color:#9d833f;font-weight:bold;text-decoration:none">clique aqui</a>
+                    para acompanhar os bastidores do evento.
+                  </p>
+                </td>
+              </tr>
+            </table>
           </td>
         </tr>
         <tr>
