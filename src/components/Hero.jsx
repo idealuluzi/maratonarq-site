@@ -10,8 +10,7 @@ export default function Hero({ onRegister }) {
         <div style={S.left}>
         <div style={S.eyebrow}>MaratonArq · {DATA.edition}</div>
         <h1 className="maq-hero-title" style={S.title}>
-          Onde a arquitetura<br />
-          encontra a <em style={S.em}>maratona</em>.
+          Uma experiência que conecta aprendizado, inovação e mercado.
         </h1>
         <p style={S.lead}>{DATA.lead}</p>
 
