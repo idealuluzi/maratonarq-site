@@ -113,10 +113,10 @@ const S = {
   head: { textAlign: 'center', marginBottom: 44, maxWidth: 560, marginInline: 'auto' },
   eyebrow: {
     fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 13, letterSpacing: '.22em',
-    textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 12,
+    textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 4,
   },
   title: {
-    fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 42,
+    fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 42, lineHeight: 1.05,
     color: 'var(--ink)', margin: '0 0 14px',
   },
   sub: {

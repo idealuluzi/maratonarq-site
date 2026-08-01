@@ -259,9 +259,15 @@ const S = {
   head: { maxWidth: 1240, margin: '0 auto 40px', padding: '0 40px' },
   eyebrow: {
     fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 13, letterSpacing: '.22em',
-    textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 12,
+    textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 4,
   },
-  title: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 42, color: 'var(--ink)', margin: 0 },
+  // lineHeight explícito: sem ele, a fonte de display sobra bastante espaço de
+  // ascendente acima da letra maiúscula, e o título parece mais longe do
+  // eyebrow do que o marginBottom sozinho sugere.
+  title: {
+    fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 42, lineHeight: 1.05,
+    color: 'var(--ink)', margin: 0,
+  },
   carousel: { position: 'relative' },
   viewport: {
     overflowX: 'auto', overflowY: 'hidden',

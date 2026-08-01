@@ -90,9 +90,12 @@ const S = {
   head: { maxWidth: 880, margin: '0 auto 32px', padding: '0 40px' },
   eyebrow: {
     fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 13, letterSpacing: '.22em',
-    textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 12,
+    textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 4,
   },
-  title: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 42, color: 'var(--ink)', margin: 0 },
+  title: {
+    fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 42, lineHeight: 1.05,
+    color: 'var(--ink)', margin: 0,
+  },
   tabs: { maxWidth: 880, margin: '0 auto 24px', padding: '0 40px', display: 'flex', gap: 12 },
   tab: {
     fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 15, padding: '11px 24px',
