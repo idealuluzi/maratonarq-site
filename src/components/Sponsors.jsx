@@ -13,29 +13,35 @@ export default function Sponsors() {
       </div>
 
       <div className="maq-sponsors-inner" style={S.tiers}>
-        {DATA.sponsorTiers.map((tier) => (
-          <div key={tier.key} className="maq-sponsor-tier" style={S.tierRow}>
-            <span className="maq-sponsor-badge" style={{ ...S.badge, color: tier.tone }}>
-              {tier.label}
-            </span>
-            <div className="maq-sponsor-row" style={S.logos}>
-              {tier.companies.map((s, i) => (
-                <img
-                  key={s.name}
-                  src={s.logo}
-                  alt={s.name}
-                  className="maq-sponsor-logo"
-                  style={{
-                    ...S.logo,
-                    height: s.size ?? S.logo.height,
-                    maxWidth: s.maxWidth ?? S.logo.maxWidth,
-                    borderLeft: i > 0 ? '1px solid var(--line-strong)' : 'none',
-                  }}
-                />
-              ))}
+        {DATA.sponsorTiers.map((tier) => {
+          // Altura-base da cota (Apoiadores é menor que Prata/Bronze); o
+          // `size` de cada empresa, quando existe, é *relativo* a essa base
+          // — então reduzir a base encolhe a cota inteira de uma vez.
+          const base = tier.logoHeight ?? S.logo.height;
+          return (
+            <div key={tier.key} className="maq-sponsor-tier" style={S.tierRow}>
+              <span className="maq-sponsor-badge" style={{ ...S.badge, color: tier.tone }}>
+                {tier.label}
+              </span>
+              <div className="maq-sponsor-row" style={S.logos}>
+                {tier.companies.map((s, i) => (
+                  <img
+                    key={s.name}
+                    src={s.logo}
+                    alt={s.name}
+                    className="maq-sponsor-logo"
+                    style={{
+                      ...S.logo,
+                      height: base * (s.sizeFactor ?? 1),
+                      maxWidth: s.maxWidth ?? S.logo.maxWidth,
+                      borderLeft: i > 0 ? '1px solid var(--line-strong)' : 'none',
+                    }}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

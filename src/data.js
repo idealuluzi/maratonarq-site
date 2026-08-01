@@ -189,14 +189,18 @@ export const DATA = {
       // Sem cota paga — por isso o tom neutro (roxo apagado), em vez das
       // cores de metal usadas em Prata/Bronze.
       key: 'apoiadores', label: 'Apoiadores', tone: '#7C6E97',
+      // Base menor que Prata/Bronze (que usam os 44px padrão) — cota de
+      // apoio, pesa menos visualmente na fileira.
+      logoHeight: 34,
       companies: [
-        // Símbolo redondo, sem nome escrito — precisa de mais altura que o
-        // padrão (44px) pra não ficar minúsculo ao lado das wordmarks.
-        { name: 'Carreira Plena', logo: '/assets/patrocinadores/carreira-plena.png', size: 68 },
-        { name: 'Angeloni', logo: '/assets/patrocinadores/angeloni.png', maxWidth: 200 },
+        // Símbolo redondo, sem nome escrito — `sizeFactor` é relativo ao
+        // `logoHeight` da cota (34px), não um valor fixo em px, então
+        // reduzir a base acima encolhe isso tudo junto.
+        { name: 'Carreira Plena', logo: '/assets/patrocinadores/carreira-plena.png', sizeFactor: 1.55 },
+        { name: 'Angeloni', logo: '/assets/patrocinadores/angeloni.png', maxWidth: 160 },
         // Ícone + nome largos (~5.6:1), mesmo tratamento do Redraw acima.
-        { name: 'UDESC', logo: '/assets/patrocinadores/udesc.png', maxWidth: 220 },
-        { name: 'Cidade Falada', logo: '/assets/patrocinadores/cidade-falada.png', size: 56 },
+        { name: 'UDESC', logo: '/assets/patrocinadores/udesc.png', maxWidth: 175 },
+        { name: 'Cidade Falada', logo: '/assets/patrocinadores/cidade-falada.png', sizeFactor: 1.3 },
       ],
     },
   ],
