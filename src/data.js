@@ -160,41 +160,23 @@ export const DATA = {
       cta: 'Garantir vaga', hot: false,
     },
   ],
-  // Patrocinadores por cota. `logo: null` é o normal enquanto a marca ainda
-  // não foi confirmada/enviada — o card mostra um espaço reservado em vez de
-  // ficar vazio. Assim que tiver o arquivo, salve em public/assets/patrocinadores/
-  // e preencha `logo` com o caminho (mesmo padrão de `speakers[].photo`).
+  // Uma fileira por cota, só as que já têm patrocinador — nada de espaço
+  // vazio para cota sem ninguém ainda. Novo patrocinador: salve o arquivo em
+  // public/assets/patrocinadores/ e adicione o item na cota certa (ou crie
+  // uma cota nova, se for o caso).
   sponsorTiers: [
     {
-      key: 'ouro', label: 'Cota Ouro', logoHeight: 64,
-      companies: [{ name: 'Sua marca aqui', logo: null }, { name: 'Sua marca aqui', logo: null }],
-    },
-    {
-      key: 'prata', label: 'Cota Prata', logoHeight: 52,
+      key: 'prata', label: 'Cota Prata',
       companies: [
-        { name: 'Sua marca aqui', logo: null },
-        { name: 'Sua marca aqui', logo: null },
-        { name: 'Sua marca aqui', logo: null },
+        { name: 'Donata Brazilian Stones', logo: '/assets/patrocinadores/donata.png' },
+        { name: 'Redraw', logo: '/assets/patrocinadores/redraw.png' },
+        { name: 'Metalco', logo: '/assets/patrocinadores/metalco.jpg' },
       ],
     },
     {
-      key: 'bronze', label: 'Cota Bronze', logoHeight: 44,
+      key: 'bronze', label: 'Cota Bronze',
       companies: [
-        { name: 'Sua marca aqui', logo: null },
-        { name: 'Sua marca aqui', logo: null },
-        { name: 'Sua marca aqui', logo: null },
-        { name: 'Sua marca aqui', logo: null },
-      ],
-    },
-    {
-      key: 'apoiadores', label: 'Apoiadores', logoHeight: 36,
-      companies: [
-        { name: 'Sua marca aqui', logo: null },
-        { name: 'Sua marca aqui', logo: null },
-        { name: 'Sua marca aqui', logo: null },
-        { name: 'Sua marca aqui', logo: null },
-        { name: 'Sua marca aqui', logo: null },
-        { name: 'Sua marca aqui', logo: null },
+        { name: 'Globo Portas', logo: '/assets/patrocinadores/globo-portas.png' },
       ],
     },
   ],

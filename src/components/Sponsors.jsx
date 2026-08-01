@@ -1,9 +1,6 @@
 import { DATA } from '../data.js';
 
-/* Uma fileira por cota, do maior prestígio (Ouro) ao menor (Apoiadores) — a
-   logo diminui de cota em cota, que é o sinal visual que costuma acompanhar
-   esse tipo de hierarquia de patrocínio. Enquanto uma marca não é confirmada,
-   `logo: null` mostra um espaço reservado em vez de a fileira ficar vazia. */
+// Uma fileira por cota — só as que já têm patrocinador confirmado.
 export default function Sponsors() {
   return (
     <section id="patrocinadores" className="maq-section" style={S.wrap}>
@@ -17,30 +14,20 @@ export default function Sponsors() {
           <div key={tier.key}>
             <div style={S.tierLabel}>{tier.label}</div>
             <div className="maq-sponsor-row" style={S.row}>
-              {tier.companies.map((c, i) => (
-                <SponsorTile key={`${tier.key}-${i}`} company={c} logoHeight={tier.logoHeight} />
+              {tier.companies.map((s) => (
+                <div key={s.name} className="maq-sponsor-tile" style={S.tile}>
+                  {s.logo ? (
+                    <img src={s.logo} alt={s.name} style={S.logo} />
+                  ) : (
+                    <span style={S.placeholder}>{s.name}</span>
+                  )}
+                </div>
               ))}
             </div>
           </div>
         ))}
       </div>
     </section>
-  );
-}
-
-function SponsorTile({ company, logoHeight }) {
-  return (
-    <div className="maq-sponsor-tile" style={{ ...S.tile, height: logoHeight + 48 }}>
-      {company.logo ? (
-        <img
-          src={company.logo}
-          alt={company.name}
-          style={{ ...S.logo, height: logoHeight }}
-        />
-      ) : (
-        <span style={S.placeholder}>{company.name}</span>
-      )}
-    </div>
   );
 }
 
@@ -55,18 +42,22 @@ const S = {
     fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 42, lineHeight: 1.05,
     color: 'var(--ink)', margin: 0,
   },
-  tiers: { display: 'flex', flexDirection: 'column', gap: 36 },
+  tiers: { display: 'flex', flexDirection: 'column', gap: 32 },
   tierLabel: {
     fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 13, letterSpacing: '.16em',
-    textTransform: 'uppercase', color: 'var(--ink-2)', marginBottom: 16,
+    textTransform: 'uppercase', color: 'var(--ink-2)', marginBottom: 14,
   },
   row: { display: 'flex', flexWrap: 'wrap', gap: 16 },
   tile: {
-    flex: '1 1 200px', maxWidth: 260, display: 'flex', alignItems: 'center', justifyContent: 'center',
-    background: 'var(--paper-raised)', border: '1px solid var(--line)', borderRadius: 'var(--r-md)',
-    padding: '0 24px',
+    flex: '1 1 220px', maxWidth: 280, height: 120, display: 'flex',
+    alignItems: 'center', justifyContent: 'center',
+    // Branco puro, e não o bege da página: a logo da Metalco vem com fundo
+    // branco sólido (não é PNG transparente) e um card bege deixaria um
+    // retângulo visível atrás dela.
+    background: '#fff', border: '1px solid var(--line)', borderRadius: 'var(--r-md)',
+    padding: '20px 28px',
   },
-  logo: { width: 'auto', maxWidth: '100%', objectFit: 'contain' },
+  logo: { width: '100%', height: '100%', objectFit: 'contain' },
   placeholder: {
     fontFamily: 'var(--font-sans)', fontWeight: 500, fontSize: 13, color: 'var(--ink-3)',
     textAlign: 'center',
