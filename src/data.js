@@ -166,7 +166,7 @@ export const DATA = {
   // uma cota nova, se for o caso).
   sponsorTiers: [
     {
-      key: 'prata', label: 'Prata', tone: '#9AA5B1',
+      key: 'prata', label: 'Cota Prata', tone: '#9AA5B1',
       companies: [
         { name: 'Donata Brazilian Stones', logo: '/assets/patrocinadores/donata.png' },
         // Ícone + nome bem largos (proporção ~7:1) — na altura padrão de
@@ -180,7 +180,7 @@ export const DATA = {
       ],
     },
     {
-      key: 'bronze', label: 'Bronze', tone: '#B87333',
+      key: 'bronze', label: 'Cota Bronze', tone: '#B87333',
       companies: [
         { name: 'Globo Portas', logo: '/assets/patrocinadores/globo-portas.png' },
       ],
