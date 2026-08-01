@@ -312,9 +312,11 @@ const S = {
     display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 12,
     fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--ink-3)',
     textDecoration: 'none', transition: 'color .2s', cursor: 'pointer',
-    // O carrossel é arrastável (mouse) e rolável (toque); isso garante que o
-    // link em si sempre responda ao toque/clique como um link normal, mesmo
-    // por cima do contêiner que captura ponteiro para o arrasto.
     position: 'relative', zIndex: 1, touchAction: 'manipulation',
+    // Área de clique maior que o texto visível: no mouse, o carrossel só
+    // "perdoa" o clique quando o pointerdown cai dentro do <a> — se o
+    // ponteiro descer 1-2px fora do texto, ele inicia um arrasto e sequestra
+    // o clique. A margem negativa compensa o padding para não mexer no layout.
+    padding: '6px 4px', margin: '6px -4px -6px',
   },
 };
