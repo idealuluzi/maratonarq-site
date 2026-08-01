@@ -8,7 +8,7 @@ export default function Sponsors() {
   return (
     <section id="patrocinadores" className="maq-sponsors" style={S.wrap}>
       <div className="maq-sponsors-inner" style={S.head}>
-        <div style={S.eyebrow}>Quem apoia</div>
+        <div style={S.eyebrow}>Nossos parceiros</div>
         <h2 className="maq-section-title" style={S.title}>Patrocinadores &amp; apoiadores</h2>
       </div>
 
@@ -43,7 +43,7 @@ const S = {
   // Tom diferente do resto da página — mesmo token usado na Programação —
   // para a seção se destacar. Só o fundo sangra: o conteúdo continua
   // centrado nos mesmos 1240px das outras seções (ver .maq-sponsors-inner).
-  wrap: { background: 'var(--paper-sunken)', padding: '48px 0 88px' },
+  wrap: { background: 'var(--paper-sunken)', padding: '48px 0 56px' },
   head: { maxWidth: 1240, margin: '0 auto 40px', padding: '0 40px' },
   eyebrow: {
     fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 13, letterSpacing: '.22em',
