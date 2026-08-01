@@ -49,10 +49,10 @@ function corpoHtml(inscricao: Record<string, unknown>) {
         </tr>
         <tr>
           <td style="padding:32px">
-            <h1 style="margin:0 0 12px;font-family:Georgia,serif;font-size:26px;color:#1A0A3D">
+            <h1 style="margin:0 0 12px;font-family:Georgia,serif;font-size:26px;color:#9d833f">
               Inscrição confirmada!
             </h1>
-            <p style="margin:0 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#463568">
+            <p style="margin:0 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#9d833f">
               Oi, ${escapar(nome)}. Sua inscrição no <strong>${EVENTO.nome}</strong> está registrada.
               Guarde as datas — a gente se vê lá.
             </p>
