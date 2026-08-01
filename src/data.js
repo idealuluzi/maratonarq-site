@@ -31,6 +31,7 @@ export const DATA = {
     { id: 'palestrantes', label: 'Palestrantes' },
     { id: 'programacao', label: 'Programação' },
     { id: 'hackathon', label: 'Hackathon' },
+    { id: 'patrocinadores', label: 'Patrocinadores' },
   ],
   // `revealed: false` deixa o card borrado, com a etiqueta "Em breve".
   // O texto desses cards é só enchimento para dar volume ao borrão — o nome
@@ -157,6 +158,44 @@ export const DATA = {
         'Contato com potenciais estagiários',
       ],
       cta: 'Garantir vaga', hot: false,
+    },
+  ],
+  // Patrocinadores por cota. `logo: null` é o normal enquanto a marca ainda
+  // não foi confirmada/enviada — o card mostra um espaço reservado em vez de
+  // ficar vazio. Assim que tiver o arquivo, salve em public/assets/patrocinadores/
+  // e preencha `logo` com o caminho (mesmo padrão de `speakers[].photo`).
+  sponsorTiers: [
+    {
+      key: 'ouro', label: 'Cota Ouro', logoHeight: 64,
+      companies: [{ name: 'Sua marca aqui', logo: null }, { name: 'Sua marca aqui', logo: null }],
+    },
+    {
+      key: 'prata', label: 'Cota Prata', logoHeight: 52,
+      companies: [
+        { name: 'Sua marca aqui', logo: null },
+        { name: 'Sua marca aqui', logo: null },
+        { name: 'Sua marca aqui', logo: null },
+      ],
+    },
+    {
+      key: 'bronze', label: 'Cota Bronze', logoHeight: 44,
+      companies: [
+        { name: 'Sua marca aqui', logo: null },
+        { name: 'Sua marca aqui', logo: null },
+        { name: 'Sua marca aqui', logo: null },
+        { name: 'Sua marca aqui', logo: null },
+      ],
+    },
+    {
+      key: 'apoiadores', label: 'Apoiadores', logoHeight: 36,
+      companies: [
+        { name: 'Sua marca aqui', logo: null },
+        { name: 'Sua marca aqui', logo: null },
+        { name: 'Sua marca aqui', logo: null },
+        { name: 'Sua marca aqui', logo: null },
+        { name: 'Sua marca aqui', logo: null },
+        { name: 'Sua marca aqui', logo: null },
+      ],
     },
   ],
   contact: {

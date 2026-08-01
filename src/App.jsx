@@ -5,6 +5,7 @@ import Hero from './components/Hero.jsx';
 import Speakers, { StatsBand } from './components/Speakers.jsx';
 import Schedule from './components/Schedule.jsx';
 import Tiers, { Footer } from './components/Tiers.jsx';
+import Sponsors from './components/Sponsors.jsx';
 import RegisterModal from './components/RegisterModal.jsx';
 
 export default function App() {
@@ -44,6 +45,7 @@ export default function App() {
         <Speakers />
         <Schedule />
         <Tiers onRegister={openReg} />
+        <Sponsors />
       </main>
       <Footer />
       <RegisterModal open={modal} tier={tier} onClose={closeReg} />
