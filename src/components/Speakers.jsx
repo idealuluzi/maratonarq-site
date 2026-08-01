@@ -216,6 +216,12 @@ function SpeakerCard({ s, i, aoDuplicar = false }) {
               href={`https://instagram.com/${s.instagram.replace('@', '')}`}
               target="_blank"
               rel="noopener noreferrer"
+              // Fonte da verdade contra o arrasto: o carrossel nunca vê este
+              // pointerdown, então nem entra em cena a lógica dele de decidir
+              // se é clique ou arrasto — o link sempre se comporta como link.
+              onPointerDown={(e) => e.stopPropagation()}
+              onMouseDown={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
             >
               <Instagram size={14} style={{ flex: 'none' }} />
               {s.instagram}
