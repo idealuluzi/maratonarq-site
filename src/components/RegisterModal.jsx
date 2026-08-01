@@ -67,8 +67,9 @@ const PASSOS = {
     { titulo: 'Como quer participar', campos: ['modalidade'] },
   ],
   Arquiteto: [
-    { titulo: 'Seus dados', campos: ['nome', 'cidade'] },
-    { titulo: 'Mais sobre você', campos: ['descoberta', 'escritorio'] },
+    { titulo: 'Seus dados', campos: ['nome', 'email'] },
+    { titulo: 'Mais sobre você', campos: ['cidade', 'descoberta'] },
+    { titulo: 'Escritório', campos: ['escritorio'] },
   ],
 };
 
@@ -76,7 +77,7 @@ const PASSOS = {
 // senão sobra resposta do caminho abandonado.
 const POR_RAMO = {
   Estudante: ['email', 'telefone', 'universidade', 'modalidade'],
-  Arquiteto: ['cidade', 'descoberta', 'escritorio'],
+  Arquiteto: ['email', 'cidade', 'descoberta', 'escritorio'],
 };
 
 const VAZIO = {
