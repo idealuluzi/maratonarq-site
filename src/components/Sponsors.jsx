@@ -15,10 +15,7 @@ export default function Sponsors() {
       <div className="maq-sponsors-inner" style={S.tiers}>
         {DATA.sponsorTiers.map((tier) => (
           <div key={tier.key} className="maq-sponsor-tier" style={S.tierRow}>
-            <span
-              className="maq-sponsor-badge"
-              style={{ ...S.badge, color: tier.tone, borderColor: tier.tone }}
-            >
+            <span className="maq-sponsor-badge" style={{ ...S.badge, color: tier.tone }}>
               {tier.label}
             </span>
             <div className="maq-sponsor-row" style={S.logos}>
@@ -65,8 +62,7 @@ const S = {
   tierRow: { display: 'flex', alignItems: 'center', gap: 28, flexWrap: 'wrap' },
   badge: {
     flex: 'none', fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 12,
-    letterSpacing: '.1em', textTransform: 'uppercase', border: '1.5px solid',
-    borderRadius: 'var(--r-pill)', padding: '7px 16px', whiteSpace: 'nowrap',
+    letterSpacing: '.1em', textTransform: 'uppercase', whiteSpace: 'nowrap',
   },
   logos: { display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 0, flex: 1, minWidth: 0 },
   logo: { height: 44, width: 'auto', maxWidth: 180, objectFit: 'contain', padding: '0 28px' },

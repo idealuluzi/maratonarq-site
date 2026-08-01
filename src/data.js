@@ -185,6 +185,20 @@ export const DATA = {
         { name: 'Globo Portas', logo: '/assets/patrocinadores/globo-portas.png' },
       ],
     },
+    {
+      // Sem cota paga — por isso o tom neutro (roxo apagado), em vez das
+      // cores de metal usadas em Prata/Bronze.
+      key: 'apoiadores', label: 'Apoiadores', tone: '#7C6E97',
+      companies: [
+        // Símbolo redondo, sem nome escrito — precisa de mais altura que o
+        // padrão (44px) pra não ficar minúsculo ao lado das wordmarks.
+        { name: 'Carreira Plena', logo: '/assets/patrocinadores/carreira-plena.png', size: 68 },
+        { name: 'Angeloni', logo: '/assets/patrocinadores/angeloni.png', maxWidth: 200 },
+        // Ícone + nome largos (~5.6:1), mesmo tratamento do Redraw acima.
+        { name: 'UDESC', logo: '/assets/patrocinadores/udesc.png', maxWidth: 220 },
+        { name: 'Cidade Falada', logo: '/assets/patrocinadores/cidade-falada.png', size: 56 },
+      ],
+    },
   ],
   contact: {
     email: 'contato@maratonarq.com.br',
