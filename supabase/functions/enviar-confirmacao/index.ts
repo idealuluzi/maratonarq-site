@@ -26,8 +26,7 @@ const EVENTO = {
   local: 'UDESC — Laguna',
 };
 
-// Handle decodificado do QR oficial (maratonarq.oficial_qr.png) — confirmar se
-// bate com o @maratonarq usado no rodapé do site (src/data.js: contact.instagram).
+// Mesmo perfil do rodapé do site (src/data.js: contact.instagram).
 const INSTAGRAM_URL = 'https://www.instagram.com/maratonarq.oficial';
 
 function corpoHtml(inscricao: Record<string, unknown>) {
