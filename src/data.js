@@ -145,7 +145,7 @@ export const DATA = {
   ],
   contact: {
     email: 'contato@maratonarq.com.br',
-    instagram: '@maratonarq',
+    instagram: '@maratonarq.oficial',
     org: 'iDealizejr — Empresa Júnior de Arquitetura e Urbanismo',
     // Assinatura da linha de copyright, no rodapé do rodapé.
     credit: 'iDealizejr',
