@@ -1,9 +1,10 @@
 import { DATA } from '../data.js';
 
-/* Sem cartão atrás da logo: cada marca flutua direto sobre o fundo da página.
-   A cota vira uma etiqueta ao lado da fileira (cor prata/bronze), em vez de
-   um título acima dela — organização mais parecida com uma barra de "quem
-   apoia" do que com um grid de cartões. */
+/* Cada cota vira uma "zona" com leve tingimento da cor da cota (prata/bronze)
+   e cantos arredondados — a etiqueta é só texto simples no canto superior
+   esquerdo, sem pílula. As logos dentro se alternam de altura (staggered),
+   em vez de ficarem todas alinhadas numa linha reta — dá o efeito de
+   composição solta em vez de grid rígido. */
 export default function Sponsors() {
   return (
     <section id="patrocinadores" className="maq-sponsors" style={S.wrap}>
@@ -14,13 +15,12 @@ export default function Sponsors() {
 
       <div className="maq-sponsors-inner" style={S.tiers}>
         {DATA.sponsorTiers.map((tier) => (
-          <div key={tier.key} className="maq-sponsor-tier" style={S.tierRow}>
-            <span
-              className="maq-sponsor-badge"
-              style={{ ...S.badge, color: tier.tone, borderColor: tier.tone }}
-            >
-              {tier.label}
-            </span>
+          <div
+            key={tier.key}
+            className="maq-sponsor-tier"
+            style={{ ...S.tierBox, background: `${tier.tone}1a` }}
+          >
+            <span style={{ ...S.label, color: tier.tone }}>{tier.label}</span>
             <div className="maq-sponsor-row" style={S.logos}>
               {tier.companies.map((s, i) => (
                 <img
@@ -32,7 +32,10 @@ export default function Sponsors() {
                     ...S.logo,
                     height: s.size ?? S.logo.height,
                     maxWidth: s.maxWidth ?? S.logo.maxWidth,
-                    borderLeft: i > 0 ? '1px solid var(--line-strong)' : 'none',
+                    // Desloca a logo do meio um pouco pra baixo das vizinhas —
+                    // é isso que quebra o alinhamento em linha reta.
+                    alignSelf: i % 2 === 1 ? 'flex-end' : 'flex-start',
+                    marginTop: i % 3 === 1 ? 20 : 0,
                   }}
                 />
               ))}
@@ -60,14 +63,15 @@ const S = {
   },
   tiers: {
     maxWidth: 1240, margin: '0 auto', padding: '0 40px',
-    display: 'flex', flexDirection: 'column', gap: 28,
+    display: 'flex', flexDirection: 'column', gap: 20,
   },
-  tierRow: { display: 'flex', alignItems: 'center', gap: 28, flexWrap: 'wrap' },
-  badge: {
-    flex: 'none', fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 12,
-    letterSpacing: '.1em', textTransform: 'uppercase', border: '1.5px solid',
-    borderRadius: 'var(--r-pill)', padding: '7px 16px', whiteSpace: 'nowrap',
+  tierBox: {
+    position: 'relative', borderRadius: 'var(--r-lg)', padding: '46px 32px 32px',
   },
-  logos: { display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 0, flex: 1, minWidth: 0 },
-  logo: { height: 44, width: 'auto', maxWidth: 180, objectFit: 'contain', padding: '0 28px' },
+  label: {
+    position: 'absolute', top: 18, left: 24, fontFamily: 'var(--font-sans)', fontWeight: 700,
+    fontSize: 12, letterSpacing: '.14em', textTransform: 'uppercase',
+  },
+  logos: { display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap', gap: 36, minHeight: 64 },
+  logo: { width: 'auto', maxWidth: 180, objectFit: 'contain', height: 44 },
 };
