@@ -49,6 +49,16 @@ export const DATA = {
       // inteiro, baixar o segundo número sobe o rosto.
       photoPosition: '45% 48%',
     },
+    {
+      revealed: true,
+      name: 'Giovani Bonetti + Leandro Rotolo',
+      role: '',
+      topic: 'Construindo uma carreira e escritório bem consolidados nos dias atuais',
+      instagram: '@ark7arquitetos',
+      tag: 'Palestra',
+      photo: '/assets/palestrantes/bonetti-rotolo.jpg',
+      photoPosition: '50% 20%',
+    },
     { revealed: false, name: 'Nome a anunciar', role: 'Convidado do MaratonArq', topic: 'Tema a anunciar' },
     { revealed: false, name: 'Nome a anunciar', role: 'Convidado do MaratonArq', topic: 'Tema a anunciar' },
     { revealed: false, name: 'Nome a anunciar', role: 'Convidado do MaratonArq', topic: 'Tema a anunciar' },
