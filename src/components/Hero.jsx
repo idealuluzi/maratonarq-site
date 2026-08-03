@@ -41,7 +41,7 @@ export default function Hero({ onRegister }) {
       </div>
 
         <div className="maq-hero-symbol" style={S.right}>
-          <LogoMark variant="indigo" fluid style={{ maxWidth: 520, margin: '0 auto' }} />
+          <LogoMark variant="indigo" fluid ribbon style={{ maxWidth: 520, margin: '0 auto' }} />
         </div>
       </div>
     </section>
