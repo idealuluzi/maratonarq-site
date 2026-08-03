@@ -36,16 +36,6 @@ const MARK_LIGHT_1 = 'm124.55,171.43l-25.85-27.06c-.47-.32-1.28-.83-2.34-1.36-11
 const MARK_LIGHT_2 = '197.04 82.49 197 82.6 195.79 80.21 174.68 152.99 175.93 155.24 175.93 155.27 204.01 205.78 259.38 205.78 197.04 82.49';
 const MARK_DARK_2 = 'm147.54,104.17c-.04.08-.08.15-.12.24-.25.48-.5.97-.75,1.47l-.58,1.81-19.92,62.13,31.83,33.31,14.1-48.65.5-1.72.04-.15.54-1.86h0s.07-.26.07-.26l20.49-70.66c-25.65-.87-35.91,4.76-46.21,24.34Z';
 
-/* Contorno externo do símbolo (as 4 formas acima, unidas numa silhueta só),
-   pra animação de "fita" que traça a logo. Não é desenhado à mão: extraído
-   fazendo a união geométrica exata das 4 formas (script em Python/shapely,
-   fora do repo) e reordenado a partir do bico esquerdo. Se a arte do símbolo
-   mudar, este path precisa ser gerado de novo — ele não se atualiza sozinho. */
-const MARK_OUTLINE = 'M34.48,207.55 L57.58,153.9 L58.68,155.02 L62.91,148.47 L72.13,142.41 L86.02,139.46 '
-  + 'L97.45,142.22 L124.94,170.1 L145.77,105 L154.37,91.45 L163.88,83.51 L177.1,79.31 L194.96,78.76 '
-  + 'L195.49,76.95 L261.33,206.98 L203.3,206.98 L173.62,153.55 L159.27,203.06 L144.75,213.19 '
-  + 'L130.03,214.98 L116.37,211.08 L84.47,181.46 L73.76,207.33 Z';
-
 // M A R A T O N A R Q
 const WORDMARK = [
   'm282.41,168.1c0-.45.32-.83,1.09-1.28.83-.58,1.34-1.6,1.34-5.56v-31.56c0-1.47-.57-2.11-1.09-2.49-.45-.38-.64-.64-.64-1.02,0-.51.32-.76.83-.76h6.77c1.02,0,1.79.45,2.11,1.47l13.61,35.97,12.71-35.97c.32-1.02,1.02-1.47,2.04-1.47h7.67c.45,0,.83.25.83.76,0,.38-.26.64-.7,1.02-.44.38-1.08,1.02-1.08,2.49v34.88c0,1.47.64,2.11,1.08,2.49.45.38.7.64.7,1.02,0,.51-.38.76-.83.76h-9.65c-.51,0-.83-.25-.83-.76,0-.38.19-.64.7-1.02.45-.38,1.02-1.02,1.02-2.49v-34.82l-14.31,37.63c-.32.96-1.02,1.47-1.98,1.47h-1.09c-.96,0-1.6-.51-1.98-1.47l-14.63-37.57v29.84c0,4.6,1.02,5.94,3.19,7.02,1.09.58,1.47.89,1.47,1.41s-.32.76-.77.76h-6.84c-.45,0-.77-.25-.77-.76Z',
@@ -89,10 +79,8 @@ export function Logo({ variant = 'brand', height = 36, style }) {
 }
 
 // `fluid` faz o símbolo acompanhar a largura do contêiner (o viewBox mantém a
-// proporção); sem ele, `size` é a largura em px. `ribbon` liga a animação de
-// fita dourada que traça o contorno (ver .maq-logo-ribbon em global.css) —
-// dispara uma vez, ao montar; não repete.
-export function LogoMark({ variant = 'white', size = 120, fluid = false, ribbon = false, style }) {
+// proporção); sem ele, `size` é a largura em px.
+export function LogoMark({ variant = 'white', size = 120, fluid = false, style }) {
   const tone = TONES[variant] ?? TONES.white;
   const dims = fluid
     ? { style: { display: 'block', width: '100%', height: 'auto', ...style } }
@@ -101,18 +89,6 @@ export function LogoMark({ variant = 'white', size = 120, fluid = false, ribbon 
   return (
     <svg viewBox={MARK_VIEWBOX} aria-hidden="true" {...dims}>
       <MarkShapes {...tone} />
-      {ribbon && (
-        <path
-          className="maq-logo-ribbon"
-          d={MARK_OUTLINE}
-          fill="none"
-          stroke="var(--light-gold)"
-          strokeWidth="2.4"
-          strokeLinejoin="round"
-          strokeLinecap="round"
-          pathLength="100"
-        />
-      )}
     </svg>
   );
 }
