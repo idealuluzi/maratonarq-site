@@ -38,6 +38,11 @@ const CAMPOS = {
     label: 'De qual universidade você é?', icon: GraduationCap,
     placeholder: 'Nome da universidade', obrigatorio: true,
   },
+  fase: {
+    label: 'Em qual fase do curso você está?',
+    escolhas: ['1º–2º ano', '3º–4º ano', '5º ano', 'Já formado(a)'],
+    obrigatorio: true,
+  },
   cidade: {
     label: 'De qual cidade você é?', icon: MapPin,
     placeholder: 'Sua cidade', obrigatorio: true,
@@ -64,6 +69,7 @@ const PASSOS = {
   Estudante: [
     { titulo: 'Seus dados', campos: ['nome', 'email'] },
     { titulo: 'Contato e faculdade', campos: ['telefone', 'universidade'] },
+    { titulo: 'Fase do curso', campos: ['fase'] },
     { titulo: 'Como quer participar', campos: ['modalidade'] },
   ],
   Arquiteto: [
@@ -76,12 +82,12 @@ const PASSOS = {
 // Campos que pertencem a só um dos ramos: trocar de perfil precisa limpá-los,
 // senão sobra resposta do caminho abandonado.
 const POR_RAMO = {
-  Estudante: ['email', 'telefone', 'universidade', 'modalidade'],
+  Estudante: ['email', 'telefone', 'universidade', 'fase', 'modalidade'],
   Arquiteto: ['email', 'cidade', 'descoberta', 'escritorio'],
 };
 
 const VAZIO = {
-  perfil: '', nome: '', email: '', telefone: '', universidade: '',
+  perfil: '', nome: '', email: '', telefone: '', universidade: '', fase: '',
   modalidade: '', cidade: '', descoberta: '', escritorio: '',
 };
 

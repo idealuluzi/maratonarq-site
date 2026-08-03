@@ -45,6 +45,7 @@ export async function salvarInscricao(dados) {
     email: limpo(dados.email),
     telefone: limpo(dados.telefone),
     universidade: limpo(dados.universidade),
+    fase: limpo(dados.fase),
     modalidade: limpo(dados.modalidade),
     cidade: limpo(dados.cidade),
     descoberta: limpo(dados.descoberta),

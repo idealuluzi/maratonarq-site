@@ -17,6 +17,7 @@ create table if not exists public.inscricoes (
   email        text,
   telefone     text,
   universidade text,
+  fase         text,
   modalidade   text,
 
   -- ramo arquiteto
@@ -27,6 +28,11 @@ create table if not exists public.inscricoes (
   -- de qual card a inscrição partiu, quando partiu de um
   lote         text
 );
+
+-- `create table if not exists` acima não adiciona coluna em tabela que já
+-- existe — isso aqui cobre quem já tinha a tabela criada antes do campo
+-- `fase` existir. Rodar de novo não quebra nada mesmo se a coluna já estiver lá.
+alter table public.inscricoes add column if not exists fase text;
 
 -- O formulário do site exige e-mail do estudante, mas não do arquiteto.
 -- Esta checagem garante a mesma regra no banco, para o caso de alguém
