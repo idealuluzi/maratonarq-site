@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useRef, useState } from 'react';
 import {
-  AlertCircle, ArrowLeft, Building2, Check, Compass, GraduationCap, Mail, MapPin, Phone, User, X,
+  AlertCircle, ArrowLeft, Building2, Check, Compass, GraduationCap, Layers, Mail, MapPin, Phone, User, X,
 } from 'lucide-react';
 import { DATA } from '../data.js';
 import { salvarInscricao } from '../lib/supabase.js';
@@ -39,9 +39,8 @@ const CAMPOS = {
     placeholder: 'Nome da universidade', obrigatorio: true,
   },
   fase: {
-    label: 'Em qual fase do curso você está?',
-    escolhas: ['1º–2º ano', '3º–4º ano', '5º ano', 'Já formado(a)'],
-    obrigatorio: true,
+    label: 'Em qual fase do curso você está?', icon: Layers,
+    placeholder: 'Ex.: 4ª fase', obrigatorio: true,
   },
   cidade: {
     label: 'De qual cidade você é?', icon: MapPin,
@@ -68,8 +67,7 @@ const PASSO_PERFIL = { titulo: 'Como você participa', campos: ['perfil'] };
 const PASSOS = {
   Estudante: [
     { titulo: 'Seus dados', campos: ['nome', 'email'] },
-    { titulo: 'Contato e faculdade', campos: ['telefone', 'universidade'] },
-    { titulo: 'Fase do curso', campos: ['fase'] },
+    { titulo: 'Contato e faculdade', campos: ['telefone', 'universidade', 'fase'] },
     { titulo: 'Como quer participar', campos: ['modalidade'] },
   ],
   Arquiteto: [
