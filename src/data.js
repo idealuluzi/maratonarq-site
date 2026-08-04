@@ -68,7 +68,7 @@ export const DATA = {
       instagram: '@laispreisler',
       tag: 'Palestra',
       photo: '/assets/palestrantes/lais-preisler.jpg',
-      photoPosition: '50% 30%',
+      photoPosition: '50% 45%',
     },
     { revealed: false, name: 'Nome a anunciar', role: 'Convidado do MaratonArq', topic: 'Tema a anunciar' },
     { revealed: false, name: 'Nome a anunciar', role: 'Convidado do MaratonArq', topic: 'Tema a anunciar' },
