@@ -127,7 +127,7 @@ export const DATA = {
         { t: '12h30', title: 'Almoço', kind: 'evento' },
         { t: '14h', title: 'Renderização REDRAW', kind: 'workshop', revealed: false },
         { t: '14h30', title: 'Orientações do hackathon', kind: 'hackathon', track: 0, revealed: false },
-        { t: '14h30', title: 'Como gerenciar um negócio', kind: 'palestra', track: 1, revealed: false },
+        { t: '14h30', title: 'Doppio', kind: 'palestra', track: 1 },
         { t: '15h30', title: 'Coffee break', kind: 'evento' },
         { t: '16h', title: 'Laís Preisler', kind: 'palestra', track: 1 },
         { t: '17h', title: 'Lyandra', kind: 'palestra', track: 1, revealed: false },
