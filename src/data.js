@@ -130,7 +130,6 @@ export const DATA = {
         { t: '14h30', title: 'Doppio', kind: 'palestra', track: 1 },
         { t: '15h30', title: 'Coffee break', kind: 'evento' },
         { t: '16h', title: 'Laís Preisler', kind: 'palestra', track: 1 },
-        { t: '17h', title: 'Lyandra', kind: 'palestra', track: 1, revealed: false },
       ],
     },
     {
