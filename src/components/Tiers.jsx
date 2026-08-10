@@ -81,7 +81,6 @@ export function Footer() {
           <FCol
             title="Contato"
             items={[
-              { label: contact.email, href: `mailto:${contact.email}` },
               { label: contact.instagram, href: `https://instagram.com/${contact.instagram.replace('@', '')}` },
               { label: 'Imprensa', href: `mailto:${contact.email}` },
             ]}
