@@ -96,7 +96,7 @@ export const DATA = {
       role: '',
       topic: 'Renderização com IA para Arquitetos e estudantes',
       instagram: '@redraw.pro',
-      tag: 'Workshop',
+      tag: 'Oficina',
       photo: '/assets/palestrantes/redraw.jpg',
       photoPosition: '50% 50%',
     },
@@ -134,7 +134,7 @@ export const DATA = {
         { t: '11h', title: 'Terraço Paisagismo', kind: 'palestra', track: 1 },
         { t: '11h30', title: 'Contextualização + tema', kind: 'hackathon', track: 0 },
         { t: '12h30', title: 'Almoço', kind: 'evento' },
-        { t: '14h', title: 'REDRAW', kind: 'workshop' },
+        { t: '14h', title: 'REDRAW', kind: 'oficina' },
         { t: '14h30', title: 'Orientações do hackathon', kind: 'hackathon', track: 0, revealed: false },
         { t: '14h30', title: 'Doppio', kind: 'palestra', track: 1 },
         { t: '15h30', title: 'Coffee break', kind: 'evento' },
@@ -251,7 +251,7 @@ export const DATA = {
 export const KIND_COLOR = {
   keynote: 'var(--indigo-700)',
   palestra: 'var(--burnt-gold)',
-  workshop: 'var(--sober-blue)',
+  oficina: 'var(--sober-blue)',
   hackathon: 'var(--gold-700)',
   evento: 'var(--ink-3)',
 };
