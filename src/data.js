@@ -54,7 +54,7 @@ export const DATA = {
       revealed: true,
       name: 'Giovani Bonetti + Leandro Rotolo',
       role: '',
-      topic: 'Construindo uma carreira e escritório bem consolidados nos dias atuais',
+      topic: 'Trajetória: da prática ao projeto',
       instagram: '@ark7arquitetos',
       tag: 'Palestra',
       photo: '/assets/palestrantes/bonetti-rotolo.jpg',
