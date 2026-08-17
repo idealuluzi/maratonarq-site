@@ -236,7 +236,6 @@ export const DATA = {
         // Ícone + nome largos (~5.6:1), mesmo tratamento do Redraw acima.
         { name: 'UDESC', logo: '/assets/patrocinadores/udesc.png', maxWidth: 175 },
         { name: 'Cidade Falada', logo: '/assets/patrocinadores/cidade-falada.png', sizeFactor: 1.3 },
-        { name: 'Lumma Construtora', logo: '/assets/patrocinadores/lumma.png' },
       ],
     },
   ],
