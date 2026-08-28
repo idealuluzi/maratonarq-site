@@ -7,7 +7,7 @@ export const DATA = {
   // Usado na tela de sucesso do modal e no e-mail de confirmação.
   datesPorPerfil: {
     Estudante: '11 – 13 SET',
-    Arquiteto: '12 SET',
+    Arquiteto: '11 – 13 SET',
   },
   city: 'UDESC - Laguna',
   ticketNote: 'Inscrições gratuitas',

@@ -33,7 +33,7 @@ const INSTAGRAM_URL = 'https://www.instagram.com/maratonarq.oficial';
 // Mesma regra de src/data.js: DATA.datesPorPerfil.
 const DATAS_POR_PERFIL: Record<string, string> = {
   Estudante: '11 a 13 de setembro',
-  Arquiteto: '12 de setembro',
+  Arquiteto: '11 a 13 de setembro',
 };
 
 function corpoHtml(inscricao: Record<string, unknown>) {
