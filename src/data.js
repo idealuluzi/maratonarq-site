@@ -119,7 +119,7 @@ export const DATA = {
       label: 'Sexta-feira, 11 de setembro',
       items: [
         { t: '14h', title: 'Giovani Bonetti + Leandro Rotolo', kind: 'palestra' },
-        { t: '15h30', title: 'Coffee break + conversa', kind: 'evento' },
+        { t: '15h30', title: 'Confraternização | Coffee break', kind: 'evento' },
       ],
     },
     {
@@ -239,7 +239,11 @@ export const DATA = {
         { name: 'Cidade Falada', logo: '/assets/patrocinadores/cidade-falada.png', sizeFactor: 1.3 },
         // Mark vertical (largura menor que a altura) — precisa de sizeFactor
         // bem maior que os outros pra não virar um selo minúsculo na fileira.
-        { name: 'AsBEA-SC — Associação Brasileira dos Escritórios de Arquitetura', logo: '/assets/patrocinadores/asbea-sc.png', sizeFactor: 2.2 },
+        {
+          name: 'AsBEA-SC — Associação Brasileira dos Escritórios de Arquitetura',
+          logo: '/assets/patrocinadores/asbea-sc-completo.png',
+          sizeFactor: 4.5, maxWidth: 130,
+        },
       ],
     },
   ],
