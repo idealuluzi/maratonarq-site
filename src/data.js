@@ -120,7 +120,6 @@ export const DATA = {
       items: [
         { t: '14h', title: 'Giovani Bonetti + Leandro Rotolo', kind: 'palestra' },
         { t: '15h30', title: 'Coffee break + conversa', kind: 'evento' },
-        { t: '16h', title: 'Glória Cabral', kind: 'palestra', revealed: false },
       ],
     },
     {
@@ -137,7 +136,7 @@ export const DATA = {
         { t: '14h', title: 'REDRAW', kind: 'oficina' },
         { t: '14h30', title: 'Orientações do hackathon', kind: 'hackathon', track: 0, revealed: false },
         { t: '14h30', title: 'Doppio', kind: 'palestra', track: 1 },
-        { t: '15h30', title: 'Coffee break', kind: 'evento' },
+        { t: '15h30', title: 'Confraternização | Coffee break', kind: 'evento' },
         { t: '16h', title: 'Laís Preisler', kind: 'palestra', track: 1 },
       ],
     },
