@@ -218,6 +218,8 @@ export const DATA = {
       key: 'bronze', label: 'Cota Bronze', tone: '#B87333',
       companies: [
         { name: 'Globo Portas', logo: '/assets/patrocinadores/globo-portas.png' },
+        { name: 'Lumma Construtora', logo: '/assets/patrocinadores/lumma.png' },
+        { name: 'Magmar', logo: '/assets/patrocinadores/magmar.png' },
       ],
     },
     {
