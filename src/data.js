@@ -239,7 +239,7 @@ export const DATA = {
         { name: 'Cidade Falada', logo: '/assets/patrocinadores/cidade-falada.png', sizeFactor: 1.3 },
         // Mark vertical (largura menor que a altura) — precisa de sizeFactor
         // bem maior que os outros pra não virar um selo minúsculo na fileira.
-        { name: 'ASBEA-SC', logo: '/assets/patrocinadores/asbea-sc.png', sizeFactor: 2.2 },
+        { name: 'AsBEA-SC — Associação Brasileira dos Escritórios de Arquitetura', logo: '/assets/patrocinadores/asbea-sc.png', sizeFactor: 2.2 },
       ],
     },
   ],
