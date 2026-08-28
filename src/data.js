@@ -238,6 +238,9 @@ export const DATA = {
         // Ícone + nome largos (~5.6:1), mesmo tratamento do Redraw acima.
         { name: 'UDESC', logo: '/assets/patrocinadores/udesc.png', maxWidth: 175 },
         { name: 'Cidade Falada', logo: '/assets/patrocinadores/cidade-falada.png', sizeFactor: 1.3 },
+        // Mark vertical (largura menor que a altura) — precisa de sizeFactor
+        // bem maior que os outros pra não virar um selo minúsculo na fileira.
+        { name: 'ASBEA-SC', logo: '/assets/patrocinadores/asbea-sc.png', sizeFactor: 2.2 },
       ],
     },
   ],
