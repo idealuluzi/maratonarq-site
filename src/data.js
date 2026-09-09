@@ -129,7 +129,7 @@ export const DATA = {
       items: [
         { t: '09h', title: 'Abertura', kind: 'evento' },
         { t: '09h30', title: 'Ana Sapata', kind: 'palestra' },
-        { t: '10h30', title: 'JA8 Arquitetura', kind: 'palestra', track: 0, revealed: false },
+        { t: '10h30', title: 'Amanda Pamato Branco', kind: 'palestra', track: 0 },
         { t: '11h', title: 'Terraço Paisagismo', kind: 'palestra', track: 1 },
         { t: '11h30', title: 'Contextualização + tema', kind: 'hackathon', track: 0 },
         { t: '12h30', title: 'Almoço', kind: 'evento' },
