@@ -20,7 +20,7 @@ export const DATA = {
     + 'então garante enquanto ainda dá tempo!',
   stats: [
     { n: '3', l: 'dias' },
-    { n: '9', l: 'palestras' },
+    { n: '8', l: 'palestras' },
     { n: '24h', l: 'de hackathon' },
     { n: '+R$1600', l: 'em prêmios' },
   ],
