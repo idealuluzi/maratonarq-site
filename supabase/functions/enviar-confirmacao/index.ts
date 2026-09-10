@@ -29,6 +29,10 @@ const EVENTO = {
 // Mesmo perfil do rodapé do site (src/data.js: contact.instagram).
 const INSTAGRAM_URL = 'https://www.instagram.com/maratonarq.oficial';
 
+// Grupo de avisos no WhatsApp. O QR em /assets/whatsapp-qr.png aponta pra
+// este mesmo link — se trocar o grupo, gerar o PNG de novo.
+const WHATSAPP_GRUPO_URL = 'https://chat.whatsapp.com/GWSNHNn5dOW4nzigP9Eynm';
+
 // Estudante participa dos três dias; arquiteto/profissional só do dia 12.
 // Mesma regra de src/data.js: DATA.datesPorPerfil.
 const DATAS_POR_PERFIL: Record<string, string> = {
@@ -97,6 +101,28 @@ function corpoHtml(inscricao: Record<string, unknown>) {
             </table>
 
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:26px">
+              <tr>
+                <td width="120" valign="middle" style="padding-right:16px">
+                  <a href="${WHATSAPP_GRUPO_URL}">
+                    <img src="https://www.maratonarq.com.br/assets/whatsapp-qr.png" alt="QR do grupo do MaratonArq no WhatsApp"
+                         width="120" style="display:block;width:120px;height:120px;border-radius:8px" />
+                  </a>
+                </td>
+                <td valign="middle" style="font-family:Helvetica,Arial,sans-serif">
+                  <p style="margin:0 0 6px;font-size:14px;font-weight:bold;color:#1A0A3D">
+                    Entre no grupo do WhatsApp
+                  </p>
+                  <p style="margin:0;font-size:13px;line-height:1.5;color:#7C6E97">
+                    É por lá que a organização manda os avisos oficiais do evento.
+                    Aponte a câmera para o qr code ou
+                    <a href="${WHATSAPP_GRUPO_URL}" style="color:#9d833f;font-weight:bold;text-decoration:none">clique aqui</a>
+                    para entrar.
+                  </p>
+                </td>
+              </tr>
+            </table>
+
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:20px">
               <tr>
                 <td width="120" valign="middle" style="padding-right:16px">
                   <a href="${INSTAGRAM_URL}">
