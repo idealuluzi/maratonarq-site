@@ -62,9 +62,13 @@ const EMAIL_REMETENTE = process.env.EMAIL_REMETENTE;
 
 const ENVIAR = process.argv.includes('--enviar');
 
-for (const [nome, valor] of Object.entries({
-  SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY: SERVICE_KEY, RESEND_API_KEY, EMAIL_REMETENTE,
-})) {
+// Ver a lista (dry-run) só precisa do Supabase. As chaves da Resend só entram
+// quando for disparar de verdade (--enviar).
+const obrigatorios = ENVIAR
+  ? { SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY: SERVICE_KEY, RESEND_API_KEY, EMAIL_REMETENTE }
+  : { SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY: SERVICE_KEY };
+
+for (const [nome, valor] of Object.entries(obrigatorios)) {
   if (!valor) {
     console.error(`Falta ${nome}. Preencha o .env.broadcast (veja o topo deste arquivo).`);
     process.exit(1);
