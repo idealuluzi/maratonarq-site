@@ -125,8 +125,8 @@ export const DATA = {
       short: 'Sex · 11',
       label: 'Sexta-feira, 11 de setembro',
       items: [
+        { t: '13h50', title: 'Abertura', kind: 'evento' },
         { t: '14h', title: 'Giovani Bonetti + Leandro Rotolo', kind: 'palestra' },
-        { t: '14h50', title: 'Abertura', kind: 'evento' },
         { t: '15h30', title: 'Confraternização | Coffee break', kind: 'evento' },
       ],
     },
