@@ -111,8 +111,6 @@ export const DATA = {
       photoPosition: '50% 30%',
     },
     { revealed: false, name: 'Nome a anunciar', role: 'Convidado do MaratonArq', topic: 'Tema a anunciar' },
-    { revealed: false, name: 'Nome a anunciar', role: 'Convidado do MaratonArq', topic: 'Tema a anunciar' },
-    { revealed: false, name: 'Nome a anunciar', role: 'Convidado do MaratonArq', topic: 'Tema a anunciar' },
   ],
   // Um dia pode ter duas trilhas em paralelo. Quando `tracks` existe, o dia
   // vira dois blocos lado a lado: um item com `track: 0|1` aparece só no bloco
