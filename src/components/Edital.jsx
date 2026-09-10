@@ -13,7 +13,7 @@ export default function Edital() {
           Critérios de participação, regras do hackathon, premiação e cronograma completo.
         </p>
         <a
-          href="/edital-maratonarq-2026.pdf"
+          href="/edital-maratonarq-2026-r2.pdf"
           target="_blank"
           rel="noopener"
           style={S.btn}
