@@ -83,6 +83,14 @@ a { color: inherit; }
   .maq-sponsors { padding: 32px 0 40px !important; }
   .maq-sponsors-inner { padding: 0 20px !important; }
 
+  /* Faixa do edital: empilha e centraliza no celular. */
+  .maq-edital {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+    padding: 32px 20px !important;
+  }
+
   .maq-tiers-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
   .maq-tier-card { transform: none !important; }
 
