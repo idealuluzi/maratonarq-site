@@ -250,6 +250,9 @@ export const DATA = {
           logo: '/assets/patrocinadores/asbea-sc-completo.png',
           sizeFactor: 4.5, maxWidth: 130,
         },
+        { name: 'Café Matriz', logo: '/assets/patrocinadores/cafe-matriz.png', sizeFactor: 1.35 },
+        // Selo redondo com texto miúdo — precisa de reforço, como o Carreira Plena.
+        { name: 'DOCA 3 Gastrobar', logo: '/assets/patrocinadores/doca3.png', sizeFactor: 1.9 },
       ],
     },
   ],
