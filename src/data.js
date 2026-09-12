@@ -137,9 +137,9 @@ export const DATA = {
       items: [
         { t: '09h', title: 'Abertura', kind: 'evento' },
         { t: '09h30', title: 'Ana Sapata', kind: 'palestra' },
-        { t: '10h30', title: 'Amanda Pamato Branco', kind: 'palestra', track: 0 },
+        { t: '10h30', title: 'Contextualização | Dorvalino Pedro de Mello Filho', kind: 'hackathon', track: 0 },
         { t: '11h', title: 'Terraço Paisagismo', kind: 'palestra', track: 1 },
-        { t: '11h30', title: 'Contextualização | Dorvalino Pedro de Mello Filho', kind: 'hackathon', track: 0 },
+        { t: '11h30', title: 'Amanda Pamato Branco', kind: 'palestra', track: 0 },
         { t: '12h30', title: 'Almoço', kind: 'evento' },
         { t: '14h', title: 'REDRAW', kind: 'oficina' },
         { t: '14h30', title: 'Doppio', kind: 'palestra', track: 1 },
