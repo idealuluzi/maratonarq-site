@@ -22,20 +22,26 @@ export default function Hero({ onRegister }) {
         </div>
 
         <div className="maq-hero-actions" style={S.actions}>
-          <button
-            style={S.primary}
-            onClick={() => onRegister()}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'var(--gold-700)';
-              e.currentTarget.style.boxShadow = 'var(--shadow-gold)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'var(--burnt-gold)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
-          >
-            Inscreva-se
-          </button>
+          {DATA.inscricoesEncerradas ? (
+            <button style={{ ...S.primary, ...S.primaryDisabled }} disabled>
+              Inscrições encerradas
+            </button>
+          ) : (
+            <button
+              style={S.primary}
+              onClick={() => onRegister()}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'var(--gold-700)';
+                e.currentTarget.style.boxShadow = 'var(--shadow-gold)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'var(--burnt-gold)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              Inscreva-se
+            </button>
+          )}
           <a href="#programacao" style={S.ghost}>Ver programação</a>
         </div>
       </div>
@@ -99,6 +105,9 @@ const S = {
     textTransform: 'uppercase', background: 'var(--burnt-gold)', color: 'var(--ink-on-gold)',
     border: 'none', borderRadius: 'var(--r-pill)', padding: '16px 32px', cursor: 'pointer',
     transition: 'all .25s',
+  },
+  primaryDisabled: {
+    background: 'var(--line-strong)', color: 'var(--ink-3)', cursor: 'not-allowed',
   },
   ghost: {
     fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 15, letterSpacing: '.06em',

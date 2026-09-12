@@ -46,15 +46,21 @@ export default function Header({ onRegister, active }) {
         ))}
       </nav>
 
-      <button
-        className="maq-header-cta"
-        style={S.cta}
-        onClick={() => onRegister()}
-        onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--gold-700)'; }}
-        onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--burnt-gold)'; }}
-      >
-        Inscreva-se
-      </button>
+      {DATA.inscricoesEncerradas ? (
+        <button className="maq-header-cta" style={{ ...S.cta, ...S.ctaDisabled }} disabled>
+          Inscrições encerradas
+        </button>
+      ) : (
+        <button
+          className="maq-header-cta"
+          style={S.cta}
+          onClick={() => onRegister()}
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--gold-700)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--burnt-gold)'; }}
+        >
+          Inscreva-se
+        </button>
+      )}
 
       <button
         className="maq-burger"
@@ -73,12 +79,21 @@ export default function Header({ onRegister, active }) {
               {n.label}
             </a>
           ))}
-          <button
-            style={{ ...S.cta, width: '100%', padding: '14px 24px', marginTop: 4 }}
-            onClick={() => { setOpen(false); onRegister(); }}
-          >
-            Inscreva-se
-          </button>
+          {DATA.inscricoesEncerradas ? (
+            <button
+              style={{ ...S.cta, ...S.ctaDisabled, width: '100%', padding: '14px 24px', marginTop: 4 }}
+              disabled
+            >
+              Inscrições encerradas
+            </button>
+          ) : (
+            <button
+              style={{ ...S.cta, width: '100%', padding: '14px 24px', marginTop: 4 }}
+              onClick={() => { setOpen(false); onRegister(); }}
+            >
+              Inscreva-se
+            </button>
+          )}
         </div>
       )}
     </header>
@@ -104,6 +119,9 @@ const S = {
     textTransform: 'uppercase', background: 'var(--burnt-gold)', color: 'var(--ink-on-gold)',
     border: 'none', borderRadius: 'var(--r-pill)', padding: '12px 24px', cursor: 'pointer',
     transition: 'background .2s',
+  },
+  ctaDisabled: {
+    background: 'var(--line-strong)', color: 'var(--ink-3)', cursor: 'not-allowed',
   },
   burger: {
     marginLeft: 'auto', width: 42, height: 42, alignItems: 'center', justifyContent: 'center',

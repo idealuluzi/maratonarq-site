@@ -8,53 +8,65 @@ export default function Tiers({ onRegister }) {
       <div style={S.head}>
         <div style={S.eyebrow}>Participe</div>
         <h2 className="maq-section-title" style={S.title}>Garanta sua vaga</h2>
-        <p style={S.sub}>{DATA.tiersNote}</p>
+        <p style={S.sub}>
+          {DATA.inscricoesEncerradas
+            ? 'O período de inscrições para o MaratonArq 2026 foi encerrado.'
+            : DATA.tiersNote}
+        </p>
       </div>
 
-      <div className="maq-tiers-grid" style={S.grid}>
-        {DATA.tiers.map((t) => (
-          <div
-            key={t.name}
-            className="maq-tier-card"
-            style={{
-              ...S.card,
-              background: t.hot ? 'var(--indigo-700)' : 'var(--paper-raised)',
-              border: t.hot ? 'none' : '1px solid var(--line)',
-              boxShadow: t.hot ? 'var(--shadow-lg)' : 'var(--shadow-sm)',
-              transform: t.hot ? 'scale(1.04)' : 'none',
-            }}
-          >
-            {t.hot && <span style={S.popular}>Mais procurado</span>}
-            <div style={{ ...S.tname, color: t.hot ? 'var(--light-gold)' : 'var(--ink)' }}>{t.name}</div>
-            <div style={{ ...S.price, color: t.hot ? 'var(--beige)' : 'var(--ink)' }}>{t.price}</div>
-            <div style={{ ...S.note, color: t.hot ? 'rgba(245,240,227,.6)' : 'var(--ink-3)' }}>{t.note}</div>
-
-            <ul style={S.feats}>
-              {t.feats.map((f) => (
-                <li key={f} style={{ ...S.feat, color: t.hot ? 'rgba(245,240,227,.9)' : 'var(--ink-2)' }}>
-                  <Check
-                    size={16}
-                    style={{ color: t.hot ? 'var(--light-gold)' : 'var(--burnt-gold)', flex: 'none' }}
-                  />
-                  {f}
-                </li>
-              ))}
-            </ul>
-
-            <button
-              onClick={() => onRegister(t)}
+      {DATA.inscricoesEncerradas ? (
+        // Inscrições fechadas: some com os lotes e deixa só um botão inerte,
+        // pra não sugerir que ainda dá pra se inscrever.
+        <div style={S.closedWrap}>
+          <button style={S.closedBtn} disabled>Inscrições encerradas</button>
+        </div>
+      ) : (
+        <div className="maq-tiers-grid" style={S.grid}>
+          {DATA.tiers.map((t) => (
+            <div
+              key={t.name}
+              className="maq-tier-card"
               style={{
-                ...S.cta,
-                background: t.hot ? 'var(--burnt-gold)' : 'transparent',
-                color: t.hot ? 'var(--ink-on-gold)' : 'var(--ink)',
-                border: t.hot ? 'none' : '1.5px solid var(--line-strong)',
+                ...S.card,
+                background: t.hot ? 'var(--indigo-700)' : 'var(--paper-raised)',
+                border: t.hot ? 'none' : '1px solid var(--line)',
+                boxShadow: t.hot ? 'var(--shadow-lg)' : 'var(--shadow-sm)',
+                transform: t.hot ? 'scale(1.04)' : 'none',
               }}
             >
-              {t.cta}
-            </button>
-          </div>
-        ))}
-      </div>
+              {t.hot && <span style={S.popular}>Mais procurado</span>}
+              <div style={{ ...S.tname, color: t.hot ? 'var(--light-gold)' : 'var(--ink)' }}>{t.name}</div>
+              <div style={{ ...S.price, color: t.hot ? 'var(--beige)' : 'var(--ink)' }}>{t.price}</div>
+              <div style={{ ...S.note, color: t.hot ? 'rgba(245,240,227,.6)' : 'var(--ink-3)' }}>{t.note}</div>
+
+              <ul style={S.feats}>
+                {t.feats.map((f) => (
+                  <li key={f} style={{ ...S.feat, color: t.hot ? 'rgba(245,240,227,.9)' : 'var(--ink-2)' }}>
+                    <Check
+                      size={16}
+                      style={{ color: t.hot ? 'var(--light-gold)' : 'var(--burnt-gold)', flex: 'none' }}
+                    />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <button
+                onClick={() => onRegister(t)}
+                style={{
+                  ...S.cta,
+                  background: t.hot ? 'var(--burnt-gold)' : 'transparent',
+                  color: t.hot ? 'var(--ink-on-gold)' : 'var(--ink)',
+                  border: t.hot ? 'none' : '1.5px solid var(--line-strong)',
+                }}
+              >
+                {t.cta}
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }
@@ -123,6 +135,12 @@ const S = {
     color: 'var(--ink-2)', margin: 0,
   },
   grid: { display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 22, alignItems: 'center' },
+  closedWrap: { display: 'flex', justifyContent: 'center' },
+  closedBtn: {
+    fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 14, letterSpacing: '.06em',
+    textTransform: 'uppercase', background: 'var(--line-strong)', color: 'var(--ink-3)',
+    border: 'none', borderRadius: 'var(--r-pill)', padding: '16px 40px', cursor: 'not-allowed',
+  },
   card: {
     borderRadius: 'var(--r-xl)', padding: '32px 28px', position: 'relative',
     display: 'flex', flexDirection: 'column',

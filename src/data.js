@@ -1,6 +1,9 @@
 // Conteúdo do site. Veio do data.js do UI kit — é aqui que você troca
 // datas, palestrantes, programação e lotes de inscrição.
 export const DATA = {
+  // Flag única: fecha a inscrição em todos os botões do site (header, hero,
+  // lotes) de uma vez. Reabrir o evento no futuro é só voltar para `false`.
+  inscricoesEncerradas: true,
   edition: '2026',
   dates: '11 – 13 SET',
   // Estudante participa dos três dias; arquiteto/profissional só do dia 12.
