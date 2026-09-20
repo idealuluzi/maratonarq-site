@@ -257,6 +257,8 @@ export const DATA = {
         { name: 'Café Matriz', logo: '/assets/patrocinadores/cafe-matriz.png', sizeFactor: 1.35 },
         // Selo redondo com texto miúdo — precisa de reforço, como o Carreira Plena.
         { name: 'DOCA 3 Gastrobar', logo: '/assets/patrocinadores/doca3.png', sizeFactor: 1.9 },
+        // Wordmark em duas linhas (~3:1) — precisa de reforço pra ler no tamanho de apoiador.
+        { name: 'Café do Mercado', logo: '/assets/patrocinadores/cafe-do-mercado.png', sizeFactor: 1.05, maxWidth: 100 },
       ],
     },
   ],
