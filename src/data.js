@@ -240,6 +240,8 @@ export const DATA = {
       logoHeight: 34,
       // Fileira longa (8+ logos): menos respiro lateral que o padrão de 28px.
       logoPadX: 18,
+      // 9 logos não cabem numa linha: centraliza pra a segunda linha não ficar colada à esquerda.
+      centerRow: true,
       companies: [
         // Símbolo redondo, sem nome escrito — `sizeFactor` é relativo ao
         // `logoHeight` da cota (34px), não um valor fixo em px, então
@@ -261,6 +263,8 @@ export const DATA = {
         { name: 'DOCA 3 Gastrobar', logo: '/assets/patrocinadores/doca3.png', sizeFactor: 1.9 },
         // Wordmark em duas linhas (~3:1) — precisa de reforço pra ler no tamanho de apoiador.
         { name: 'Café do Mercado', logo: '/assets/patrocinadores/cafe-do-mercado.png', sizeFactor: 1.6, maxWidth: 150 },
+        // Wordmark bem largo (~4:1): "arch" foi repintado de branco pra quase-preto (lia só sobre fundo branco).
+        { name: 'archpool', logo: '/assets/patrocinadores/archpool.png', sizeFactor: 1.0, maxWidth: 140, noDivider: true },
       ],
     },
   ],

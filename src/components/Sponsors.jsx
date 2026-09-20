@@ -23,7 +23,10 @@ export default function Sponsors() {
               <span className="maq-sponsor-badge" style={{ ...S.badge, color: tier.tone }}>
                 {tier.label}
               </span>
-              <div className="maq-sponsor-row" style={S.logos}>
+              <div
+                className="maq-sponsor-row"
+                style={{ ...S.logos, ...(tier.centerRow && { justifyContent: 'center' }) }}
+              >
                 {tier.companies.map((s, i) => (
                   <img
                     key={s.name}
@@ -37,7 +40,7 @@ export default function Sponsors() {
                       // Espaçamento lateral por cota: entra na conta do maxWidth,
                       // então fileira cheia (Apoiadores) usa menos pra a imagem crescer.
                       ...(tier.logoPadX != null && { padding: `0 ${tier.logoPadX}px` }),
-                      borderLeft: i > 0 ? '1px solid var(--line-strong)' : 'none',
+                      borderLeft: i > 0 && !s.noDivider ? '1px solid var(--line-strong)' : 'none',
                     }}
                   />
                 ))}
