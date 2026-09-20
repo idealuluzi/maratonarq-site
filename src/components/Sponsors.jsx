@@ -34,6 +34,9 @@ export default function Sponsors() {
                       ...S.logo,
                       height: base * (s.sizeFactor ?? 1),
                       maxWidth: s.maxWidth ?? S.logo.maxWidth,
+                      // Espaçamento lateral por cota: entra na conta do maxWidth,
+                      // então fileira cheia (Apoiadores) usa menos pra a imagem crescer.
+                      ...(tier.logoPadX != null && { padding: `0 ${tier.logoPadX}px` }),
                       borderLeft: i > 0 ? '1px solid var(--line-strong)' : 'none',
                     }}
                   />

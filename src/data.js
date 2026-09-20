@@ -238,6 +238,8 @@ export const DATA = {
       // Base menor que Prata/Bronze (que usam os 44px padrão) — cota de
       // apoio, pesa menos visualmente na fileira.
       logoHeight: 34,
+      // Fileira longa (8+ logos): menos respiro lateral que o padrão de 28px.
+      logoPadX: 18,
       companies: [
         // Símbolo redondo, sem nome escrito — `sizeFactor` é relativo ao
         // `logoHeight` da cota (34px), não um valor fixo em px, então
@@ -258,7 +260,7 @@ export const DATA = {
         // Selo redondo com texto miúdo — precisa de reforço, como o Carreira Plena.
         { name: 'DOCA 3 Gastrobar', logo: '/assets/patrocinadores/doca3.png', sizeFactor: 1.9 },
         // Wordmark em duas linhas (~3:1) — precisa de reforço pra ler no tamanho de apoiador.
-        { name: 'Café do Mercado', logo: '/assets/patrocinadores/cafe-do-mercado.png', sizeFactor: 1.05, maxWidth: 100 },
+        { name: 'Café do Mercado', logo: '/assets/patrocinadores/cafe-do-mercado.png', sizeFactor: 1.6, maxWidth: 150 },
       ],
     },
   ],
