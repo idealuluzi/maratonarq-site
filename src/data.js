@@ -227,7 +227,6 @@ export const DATA = {
       key: 'bronze', label: 'Cota Bronze', tone: '#B87333',
       companies: [
         { name: 'Globo Portas', logo: '/assets/patrocinadores/globo-portas.png' },
-        { name: 'Lumma Construtora', logo: '/assets/patrocinadores/lumma.png' },
         { name: 'Magmar', logo: '/assets/patrocinadores/magmar.png' },
       ],
     },
@@ -257,6 +256,7 @@ export const DATA = {
           sizeFactor: 4.5, maxWidth: 130,
         },
         { name: 'Café Matriz', logo: '/assets/patrocinadores/cafe-matriz.png', sizeFactor: 1.35 },
+        { name: 'Lumma Construtora', logo: '/assets/patrocinadores/lumma.png', sizeFactor: 1.35, maxWidth: 150 },
         // Selo redondo com texto miúdo — precisa de reforço, como o Carreira Plena.
         { name: 'DOCA 3 Gastrobar', logo: '/assets/patrocinadores/doca3.png', sizeFactor: 1.9 },
         // Wordmark em duas linhas (~3:1) — precisa de reforço pra ler no tamanho de apoiador.
