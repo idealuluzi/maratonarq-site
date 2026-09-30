@@ -23,29 +23,23 @@ export default function Sponsors() {
               <span className="maq-sponsor-badge" style={{ ...S.badge, color: tier.tone }}>
                 {tier.label}
               </span>
-              <div style={S.lines}>
-                {linhas(tier.companies).map((linha, li) => (
-                  <div key={li} className="maq-sponsor-row" style={S.logos}>
-                    {linha.map((s, i) => (
-                      <img
-                        key={s.name}
-                        src={s.logo}
-                        alt={s.name}
-                        className="maq-sponsor-logo"
-                        style={{
-                          ...S.logo,
-                          height: base * (s.sizeFactor ?? 1),
-                          maxWidth: s.maxWidth ?? S.logo.maxWidth,
-                          // Espaçamento lateral por cota: entra na conta do maxWidth,
-                          // então fileira cheia (Apoiadores) usa menos pra a imagem crescer.
-                          ...(tier.logoPadX != null && { padding: `0 ${tier.logoPadX}px` }),
-                          // O primeiro de cada linha não leva divisor: assim a linha
-                          // de baixo começa alinhada com a de cima.
-                          borderLeft: i > 0 ? '1px solid var(--line-strong)' : 'none',
-                        }}
-                      />
-                    ))}
-                  </div>
+              <div className="maq-sponsor-row" style={S.logos}>
+                {tier.companies.map((s, i) => (
+                  <img
+                    key={s.name}
+                    src={s.logo}
+                    alt={s.name}
+                    className="maq-sponsor-logo"
+                    style={{
+                      ...S.logo,
+                      height: base * (s.sizeFactor ?? 1),
+                      maxWidth: s.maxWidth ?? S.logo.maxWidth,
+                      // Espaçamento lateral por cota: entra na conta do maxWidth,
+                      // então fileira cheia (Apoiadores) usa menos pra a imagem crescer.
+                      ...(tier.logoPadX != null && { padding: `0 ${tier.logoPadX}px` }),
+                      borderLeft: i > 0 ? '1px solid var(--line-strong)' : 'none',
+                    }}
+                  />
                 ))}
               </div>
             </div>
@@ -54,17 +48,6 @@ export default function Sponsors() {
       </div>
     </section>
   );
-}
-
-// Quebra as empresas da cota em linhas: uma nova linha começa em cada empresa
-// marcada com `breakBefore` (ver data.js). Sem marca, tudo fica em uma linha.
-function linhas(companies) {
-  const out = [];
-  companies.forEach((c) => {
-    if (!out.length || c.breakBefore) out.push([]);
-    out[out.length - 1].push(c);
-  });
-  return out;
 }
 
 const S = {
@@ -90,7 +73,6 @@ const S = {
     flex: 'none', fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 12,
     letterSpacing: '.1em', textTransform: 'uppercase', whiteSpace: 'nowrap',
   },
-  lines: { display: 'flex', flexDirection: 'column', gap: 22, flex: 1, minWidth: 0 },
-  logos: { display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 0, minWidth: 0 },
+  logos: { display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '18px 0', flex: 1, minWidth: 0 },
   logo: { height: 44, width: 'auto', maxWidth: 180, objectFit: 'contain', padding: '0 28px' },
 };
