@@ -228,6 +228,8 @@ export const DATA = {
       companies: [
         { name: 'Globo Portas', logo: '/assets/patrocinadores/globo-portas.png' },
         { name: 'Magmar', logo: '/assets/patrocinadores/magmar.png' },
+        // Wordmark muito largo (~7.6:1) — mesmo tratamento do Redraw acima.
+        { name: 'Reveev', logo: '/assets/patrocinadores/reveev.png', maxWidth: 200 },
       ],
     },
     {
